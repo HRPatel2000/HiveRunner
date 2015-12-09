@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Tue Aug 25 08:05:44 CDT 2015:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): instance a816c00e-014f-64f6-dee5-00000e1c03d8 
+on database directory /Users/hpatel/Tech/Projects/CAT/HiveRunner/metastore_db with class loader sun.misc.Launcher$AppClassLoader@5374d4c9 
+Loaded from file:/Users/hpatel/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.10.2.0/47eba6736561c377f2132f5e09e2fe8084d899a9/derby-10.10.2.0.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.7.0_79-b15
+user.dir=/Users/hpatel/Tech/Projects/CAT/HiveRunner
+os.name=Mac OS X
+os.arch=x86_64
+os.version=10.10.3
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''

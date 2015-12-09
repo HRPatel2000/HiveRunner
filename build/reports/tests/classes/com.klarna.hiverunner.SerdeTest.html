@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - Class com.klarna.hiverunner.SerdeTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>Class com.klarna.hiverunner.SerdeTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/com.klarna.hiverunner.html">com.klarna.hiverunner</a> &gt; SerdeTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">2</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">2</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.574s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox failures" id="successRate">
+<div class="percent">0%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Failed tests</a>
+</li>
+<li>
+<a href="#tab1">Tests</a>
+</li>
+<li>
+<a href="#tab2">Standard error</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Failed tests</h2>
+<div class="test">
+<a name="testWithCustomSerde"></a>
+<h3 class="failures">testWithCustomSerde</h3>
+<span class="code">
+<pre>java.lang.IllegalStateException: Failed to executeScript 'CREATE EXTERNAL TABLE customSerdeTable (s1 string, s2 string, s3 string)
+    ROW FORMAT SERDE 'com.klarna.hiverunner.ToUpperCaseSerDe'
+        WITH SERDEPROPERTIES (
+            &quot;key&quot;=&quot;value&quot;,
+            &quot;KEY&quot;= &quot;VALUE&quot;
+        )
+        STORED AS TEXTFILE
+LOCATION '${hiveconf:hadoop.tmp.dir.uri}/customSerde';
+
+
+
+
+': Failed to executeQuery Hive query CREATE EXTERNAL TABLE customSerdeTable (s1 string, s2 string, s3 string)
+    ROW FORMAT SERDE 'com.klarna.hiverunner.ToUpperCaseSerDe'
+        WITH SERDEPROPERTIES (
+            &quot;key&quot;=&quot;value&quot;,
+            &quot;KEY&quot;= &quot;VALUE&quot;
+        )
+        STORED AS TEXTFILE
+LOCATION '${hiveconf:hadoop.tmp.dir.uri}/customSerde': Query returned non-zero code: 1, cause: FAILED: Execution Error, return code 1 from org.apache.hadoop.hive.ql.exec.DDLTask. java.lang.NullPointerException
+	at com.klarna.hiverunner.builder.HiveShellBase.executeScriptsUnderTest(HiveShellBase.java:253)
+	at com.klarna.hiverunner.builder.HiveShellBase.start(HiveShellBase.java:102)
+	at com.klarna.hiverunner.SerdeTest.testWithCustomSerde(SerdeTest.java:58)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at com.klarna.hiverunner.StandaloneHiveRunner.evaluateStatement(StandaloneHiveRunner.java:100)
+	at com.klarna.hiverunner.StandaloneHiveRunner.access$000(StandaloneHiveRunner.java:53)
+	at com.klarna.hiverunner.StandaloneHiveRunner$1$1.evaluate(StandaloneHiveRunner.java:79)
+	at org.junit.rules.ExternalResource$1.evaluate(ExternalResource.java:48)
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecuter.runTestClass(JUnitTestClassExecuter.java:86)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecuter.execute(JUnitTestClassExecuter.java:49)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassProcessor.processTestClass(JUnitTestClassProcessor.java:64)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:50)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.messaging.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32)
+	at org.gradle.messaging.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93)
+	at com.sun.proxy.$Proxy2.processTestClass(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:106)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.messaging.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:360)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:54)
+	at org.gradle.internal.concurrent.StoppableExecutorImpl$1.run(StoppableExecutorImpl.java:40)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.IllegalStateException: Failed to executeQuery Hive query CREATE EXTERNAL TABLE customSerdeTable (s1 string, s2 string, s3 string)
+    ROW FORMAT SERDE 'com.klarna.hiverunner.ToUpperCaseSerDe'
+        WITH SERDEPROPERTIES (
+            &quot;key&quot;=&quot;value&quot;,
+            &quot;KEY&quot;= &quot;VALUE&quot;
+        )
+        STORED AS TEXTFILE
+LOCATION '${hiveconf:hadoop.tmp.dir.uri}/customSerde': Query returned non-zero code: 1, cause: FAILED: Execution Error, return code 1 from org.apache.hadoop.hive.ql.exec.DDLTask. java.lang.NullPointerException
+	at com.klarna.hiverunner.HiveServerContainer.executeScript(HiveServerContainer.java:106)
+	at com.klarna.hiverunner.builder.HiveShellBase.executeScriptsUnderTest(HiveShellBase.java:251)
+	... 50 more
+Caused by: HiveServerException(message:Query returned non-zero code: 1, cause: FAILED: Execution Error, return code 1 from org.apache.hadoop.hive.ql.exec.DDLTask. java.lang.NullPointerException, errorCode:1, SQLState:08S01)
+	at org.apache.hadoop.hive.service.HiveServer$HiveServerHandler.execute(HiveServer.java:218)
+	at com.klarna.hiverunner.HiveServerContainer.executeScript(HiveServerContainer.java:104)
+	... 51 more
+</pre>
+</span>
+</div>
+<div class="test">
+<a name="testWithProvidedRegexSerde"></a>
+<h3 class="failures">testWithProvidedRegexSerde</h3>
+<span class="code">
+<pre>java.lang.IllegalStateException: Failed to executeScript 'CREATE EXTERNAL TABLE customSerdeTable (s1 string, s2 string, s3 string)
+    ROW FORMAT SERDE 'com.klarna.hiverunner.ToUpperCaseSerDe'
+        WITH SERDEPROPERTIES (
+            &quot;key&quot;=&quot;value&quot;,
+            &quot;KEY&quot;= &quot;VALUE&quot;
+        )
+        STORED AS TEXTFILE
+LOCATION '${hiveconf:hadoop.tmp.dir.uri}/customSerde';
+
+
+
+
+': Failed to executeQuery Hive query CREATE EXTERNAL TABLE customSerdeTable (s1 string, s2 string, s3 string)
+    ROW FORMAT SERDE 'com.klarna.hiverunner.ToUpperCaseSerDe'
+        WITH SERDEPROPERTIES (
+            &quot;key&quot;=&quot;value&quot;,
+            &quot;KEY&quot;= &quot;VALUE&quot;
+        )
+        STORED AS TEXTFILE
+LOCATION '${hiveconf:hadoop.tmp.dir.uri}/customSerde': Query returned non-zero code: 1, cause: FAILED: Execution Error, return code 1 from org.apache.hadoop.hive.ql.exec.DDLTask. java.lang.NullPointerException
+	at com.klarna.hiverunner.builder.HiveShellBase.executeScriptsUnderTest(HiveShellBase.java:253)
+	at com.klarna.hiverunner.builder.HiveShellBase.start(HiveShellBase.java:102)
+	at com.klarna.hiverunner.SerdeTest.testWithProvidedRegexSerde(SerdeTest.java:52)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at com.klarna.hiverunner.StandaloneHiveRunner.evaluateStatement(StandaloneHiveRunner.java:100)
+	at com.klarna.hiverunner.StandaloneHiveRunner.access$000(StandaloneHiveRunner.java:53)
+	at com.klarna.hiverunner.StandaloneHiveRunner$1$1.evaluate(StandaloneHiveRunner.java:79)
+	at org.junit.rules.ExternalResource$1.evaluate(ExternalResource.java:48)
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecuter.runTestClass(JUnitTestClassExecuter.java:86)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecuter.execute(JUnitTestClassExecuter.java:49)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassProcessor.processTestClass(JUnitTestClassProcessor.java:64)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:50)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.messaging.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32)
+	at org.gradle.messaging.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93)
+	at com.sun.proxy.$Proxy2.processTestClass(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:106)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.messaging.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:360)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:54)
+	at org.gradle.internal.concurrent.StoppableExecutorImpl$1.run(StoppableExecutorImpl.java:40)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.IllegalStateException: Failed to executeQuery Hive query CREATE EXTERNAL TABLE customSerdeTable (s1 string, s2 string, s3 string)
+    ROW FORMAT SERDE 'com.klarna.hiverunner.ToUpperCaseSerDe'
+        WITH SERDEPROPERTIES (
+            &quot;key&quot;=&quot;value&quot;,
+            &quot;KEY&quot;= &quot;VALUE&quot;
+        )
+        STORED AS TEXTFILE
+LOCATION '${hiveconf:hadoop.tmp.dir.uri}/customSerde': Query returned non-zero code: 1, cause: FAILED: Execution Error, return code 1 from org.apache.hadoop.hive.ql.exec.DDLTask. java.lang.NullPointerException
+	at com.klarna.hiverunner.HiveServerContainer.executeScript(HiveServerContainer.java:106)
+	at com.klarna.hiverunner.builder.HiveShellBase.executeScriptsUnderTest(HiveShellBase.java:251)
+	... 50 more
+Caused by: HiveServerException(message:Query returned non-zero code: 1, cause: FAILED: Execution Error, return code 1 from org.apache.hadoop.hive.ql.exec.DDLTask. java.lang.NullPointerException, errorCode:1, SQLState:08S01)
+	at org.apache.hadoop.hive.service.HiveServer$HiveServerHandler.execute(HiveServer.java:218)
+	at com.klarna.hiverunner.HiveServerContainer.executeScript(HiveServerContainer.java:104)
+	... 51 more
+</pre>
+</span>
+</div>
+</div>
+<div id="tab1" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="failures">testWithCustomSerde</td>
+<td>0.273s</td>
+<td class="failures">failed</td>
+</tr>
+<tr>
+<td class="failures">testWithProvidedRegexSerde</td>
+<td>0.301s</td>
+<td class="failures">failed</td>
+</tr>
+</table>
+</div>
+<div id="tab2" class="tab">
+<h2>Standard error</h2>
+<span class="code">
+<pre>15/09/09 11:11:06 INFO metastore.HiveMetaStore: 0: Opening raw store with implemenation class:org.apache.hadoop.hive.metastore.ObjectStore
+15/09/09 11:11:06 INFO metastore.ObjectStore: ObjectStore, initialize called
+15/09/09 11:11:06 INFO DataNucleus.Persistence: Property datanucleus.cache.level2 unknown - will be ignored
+15/09/09 11:11:06 INFO DataNucleus.Persistence: Property hive.metastore.integral.jdo.pushdown unknown - will be ignored
+15/09/09 11:11:06 INFO metastore.ObjectStore: Setting MetaStore object pin classes with hive.metastore.cache.pinobjtypes=&quot;Table,StorageDescriptor,SerDeInfo,Partition,Database,Type,FieldSchema,Order&quot;
+15/09/09 11:11:06 INFO metastore.MetaStoreDirectSql: MySQL check failed, assuming we are not on mysql: unknown token: 
+15/09/09 11:11:06 INFO DataNucleus.Datastore: The class &quot;org.apache.hadoop.hive.metastore.model.MFieldSchema&quot; is tagged as &quot;embedded-only&quot; so does not have its own datastore table.
+15/09/09 11:11:06 INFO DataNucleus.Datastore: The class &quot;org.apache.hadoop.hive.metastore.model.MOrder&quot; is tagged as &quot;embedded-only&quot; so does not have its own datastore table.
+15/09/09 11:11:06 INFO DataNucleus.Datastore: The class &quot;org.apache.hadoop.hive.metastore.model.MFieldSchema&quot; is tagged as &quot;embedded-only&quot; so does not have its own datastore table.
+15/09/09 11:11:06 INFO DataNucleus.Datastore: The class &quot;org.apache.hadoop.hive.metastore.model.MOrder&quot; is tagged as &quot;embedded-only&quot; so does not have its own datastore table.
+15/09/09 11:11:06 INFO metastore.ObjectStore: Initialized ObjectStore
+15/09/09 11:11:06 INFO metastore.HiveMetaStore: No user is added in admin role, since config is empty
+15/09/09 11:11:06 INFO metastore.HiveMetaStore: 0: Shutting down the object store...
+15/09/09 11:11:06 INFO HiveMetaStore.audit: ugi=hpatel	ip=unknown-ip-addr	cmd=Shutting down the object store...	
+15/09/09 11:11:06 INFO metastore.HiveMetaStore: 0: Metastore shutdown complete.
+15/09/09 11:11:06 INFO HiveMetaStore.audit: ugi=hpatel	ip=unknown-ip-addr	cmd=Metastore shutdown complete.	
+15/09/09 11:11:06 INFO metastore.HiveMetaStore: No user is added in admin role, since config is empty
+15/09/09 11:11:06 INFO session.SessionState: No Tez session required at this point. hive.execution.engine=mr.
+15/09/09 11:11:06 INFO service.HiveServer: Putting temp output to file /var/folders/y7/4_pz5fzx54ngcmghz3v6t3m00000gn/T/junit787525099703078181/localscratchdir/33cd8400-c463-47d7-915a-c78fa8577fa22867979504409142046.pipeout
+15/09/09 11:11:06 INFO service.HiveServer: Running the query: SHOW TABLES
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;PERFLOG method=Driver.run from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;PERFLOG method=TimeToSubmit from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO ql.Driver: Concurrency mode is disabled, not creating a lock manager
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;PERFLOG method=compile from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;PERFLOG method=parse from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO parse.ParseDriver: Parsing command: SHOW TABLES
+15/09/09 11:11:06 INFO parse.ParseDriver: Parse Completed
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;/PERFLOG method=parse start=1441815066407 end=1441815066407 duration=0 from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;PERFLOG method=semanticAnalyze from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO ql.Driver: Semantic Analysis Completed
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;/PERFLOG method=semanticAnalyze start=1441815066407 end=1441815066411 duration=4 from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO exec.ListSinkOperator: Initializing Self 175 OP
+15/09/09 11:11:06 INFO exec.ListSinkOperator: Operator 175 OP initialized
+15/09/09 11:11:06 INFO exec.ListSinkOperator: Initialization Done 175 OP
+15/09/09 11:11:06 INFO ql.Driver: Returning Hive schema: Schema(fieldSchemas:[FieldSchema(name:tab_name, type:string, comment:from deserializer)], properties:null)
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;/PERFLOG method=compile start=1441815066407 end=1441815066412 duration=5 from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;PERFLOG method=Driver.execute from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO ql.Driver: Starting command: SHOW TABLES
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;/PERFLOG method=TimeToSubmit start=1441815066407 end=1441815066412 duration=5 from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;PERFLOG method=runTasks from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;PERFLOG method=task.DDL.Stage-0 from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO metastore.HiveMetaStore: 0: get_database: default
+15/09/09 11:11:06 INFO HiveMetaStore.audit: ugi=hpatel	ip=unknown-ip-addr	cmd=get_database: default	
+15/09/09 11:11:06 INFO metastore.HiveMetaStore: 0: Opening raw store with implemenation class:org.apache.hadoop.hive.metastore.ObjectStore
+15/09/09 11:11:06 INFO metastore.ObjectStore: ObjectStore, initialize called
+15/09/09 11:11:06 INFO metastore.MetaStoreDirectSql: MySQL check failed, assuming we are not on mysql: unknown token: 
+15/09/09 11:11:06 INFO DataNucleus.Query: Reading in results for query &quot;org.datanucleus.store.rdbms.query.SQLQuery@0&quot; since the connection used is closing
+15/09/09 11:11:06 INFO metastore.ObjectStore: Initialized ObjectStore
+15/09/09 11:11:06 INFO metastore.HiveMetaStore: 0: get_tables: db=default pat=.*
+15/09/09 11:11:06 INFO HiveMetaStore.audit: ugi=hpatel	ip=unknown-ip-addr	cmd=get_tables: db=default pat=.*	
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;/PERFLOG method=runTasks start=1441815066412 end=1441815066422 duration=10 from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;/PERFLOG method=Driver.execute start=1441815066412 end=1441815066422 duration=10 from=org.apache.hadoop.hive.ql.Driver&gt;
+OK
+15/09/09 11:11:06 INFO ql.Driver: OK
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;PERFLOG method=releaseLocks from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;/PERFLOG method=releaseLocks start=1441815066422 end=1441815066422 duration=0 from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;/PERFLOG method=Driver.run start=1441815066407 end=1441815066422 duration=15 from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO builder.HiveShellTearable: Created hive resource /var/folders/y7/4_pz5fzx54ngcmghz3v6t3m00000gn/T/junit787525099703078181/hadooptmp/customSerde/data.csv
+15/09/09 11:11:06 INFO service.HiveServer: Running the query: CREATE TABLE serde_test (
+  key STRING,
+  value STRING
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.contrib.serde2.RegexSerDe'
+WITH SERDEPROPERTIES  (
+&quot;input.regex&quot; = &quot;([0-9]*)#([A-Z]*).*&quot;
+)
+STORED AS TEXTFILE
+LOCATION '${hiveconf:hadoop.tmp.dir.uri}/serde'
+15/09/09 11:11:06 INFO exec.ListSinkOperator: 175 finished. closing... 
+15/09/09 11:11:06 INFO exec.ListSinkOperator: 175 Close done
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;PERFLOG method=Driver.run from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;PERFLOG method=TimeToSubmit from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO ql.Driver: Concurrency mode is disabled, not creating a lock manager
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;PERFLOG method=compile from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;PERFLOG method=parse from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO parse.ParseDriver: Parsing command: CREATE TABLE serde_test (
+  key STRING,
+  value STRING
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.contrib.serde2.RegexSerDe'
+WITH SERDEPROPERTIES  (
+&quot;input.regex&quot; = &quot;([0-9]*)#([A-Z]*).*&quot;
+)
+STORED AS TEXTFILE
+LOCATION 'file:///var/folders/y7/4_pz5fzx54ngcmghz3v6t3m00000gn/T/junit787525099703078181/hadooptmp//serde'
+15/09/09 11:11:06 INFO parse.ParseDriver: Parse Completed
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;/PERFLOG method=parse start=1441815066424 end=1441815066425 duration=1 from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;PERFLOG method=semanticAnalyze from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO parse.SemanticAnalyzer: Starting Semantic Analysis
+15/09/09 11:11:06 INFO parse.SemanticAnalyzer: Creating table serde_test position=13
+15/09/09 11:11:06 INFO metastore.HiveMetaStore: 0: get_database: default
+15/09/09 11:11:06 INFO HiveMetaStore.audit: ugi=hpatel	ip=unknown-ip-addr	cmd=get_database: default	
+15/09/09 11:11:06 INFO ql.Driver: Semantic Analysis Completed
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;/PERFLOG method=semanticAnalyze start=1441815066425 end=1441815066427 duration=2 from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO ql.Driver: Returning Hive schema: Schema(fieldSchemas:null, properties:null)
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;/PERFLOG method=compile start=1441815066424 end=1441815066427 duration=3 from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;PERFLOG method=Driver.execute from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO ql.Driver: Starting command: CREATE TABLE serde_test (
+  key STRING,
+  value STRING
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.contrib.serde2.RegexSerDe'
+WITH SERDEPROPERTIES  (
+&quot;input.regex&quot; = &quot;([0-9]*)#([A-Z]*).*&quot;
+)
+STORED AS TEXTFILE
+LOCATION 'file:///var/folders/y7/4_pz5fzx54ngcmghz3v6t3m00000gn/T/junit787525099703078181/hadooptmp//serde'
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;/PERFLOG method=TimeToSubmit start=1441815066424 end=1441815066428 duration=4 from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;PERFLOG method=runTasks from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;PERFLOG method=task.DDL.Stage-0 from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO metastore.HiveMetaStore: 0: create_table: Table(tableName:serde_test, dbName:default, owner:hpatel, createTime:1441815066, lastAccessTime:0, retention:0, sd:StorageDescriptor(cols:[FieldSchema(name:key, type:string, comment:null), FieldSchema(name:value, type:string, comment:null)], location:file:/var/folders/y7/4_pz5fzx54ngcmghz3v6t3m00000gn/T/junit787525099703078181/hadooptmp/serde, inputFormat:org.apache.hadoop.mapred.TextInputFormat, outputFormat:org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat, compressed:false, numBuckets:-1, serdeInfo:SerDeInfo(name:null, serializationLib:org.apache.hadoop.hive.contrib.serde2.RegexSerDe, parameters:{serialization.format=1, input.regex=([0-9]*)#([A-Z]*).*}), bucketCols:[], sortCols:[], parameters:{}, skewedInfo:SkewedInfo(skewedColNames:[], skewedColValues:[], skewedColValueLocationMaps:{}), storedAsSubDirectories:false), partitionKeys:[], parameters:{}, viewOriginalText:null, viewExpandedText:null, tableType:MANAGED_TABLE)
+15/09/09 11:11:06 INFO HiveMetaStore.audit: ugi=hpatel	ip=unknown-ip-addr	cmd=create_table: Table(tableName:serde_test, dbName:default, owner:hpatel, createTime:1441815066, lastAccessTime:0, retention:0, sd:StorageDescriptor(cols:[FieldSchema(name:key, type:string, comment:null), FieldSchema(name:value, type:string, comment:null)], location:file:/var/folders/y7/4_pz5fzx54ngcmghz3v6t3m00000gn/T/junit787525099703078181/hadooptmp/serde, inputFormat:org.apache.hadoop.mapred.TextInputFormat, outputFormat:org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat, compressed:false, numBuckets:-1, serdeInfo:SerDeInfo(name:null, serializationLib:org.apache.hadoop.hive.contrib.serde2.RegexSerDe, parameters:{serialization.format=1, input.regex=([0-9]*)#([A-Z]*).*}), bucketCols:[], sortCols:[], parameters:{}, skewedInfo:SkewedInfo(skewedColNames:[], skewedColValues:[], skewedColValueLocationMaps:{}), storedAsSubDirectories:false), partitionKeys:[], parameters:{}, viewOriginalText:null, viewExpandedText:null, tableType:MANAGED_TABLE)	
+15/09/09 11:11:06 WARN metastore.HiveMetaStore: Location: file:/var/folders/y7/4_pz5fzx54ngcmghz3v6t3m00000gn/T/junit787525099703078181/hadooptmp/serde specified for non-external table:serde_test
+15/09/09 11:11:06 INFO common.FileUtils: Creating directory if it doesn't exist: file:/var/folders/y7/4_pz5fzx54ngcmghz3v6t3m00000gn/T/junit787525099703078181/hadooptmp/serde
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;/PERFLOG method=runTasks start=1441815066428 end=1441815066470 duration=42 from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;/PERFLOG method=Driver.execute start=1441815066427 end=1441815066470 duration=43 from=org.apache.hadoop.hive.ql.Driver&gt;
+OK
+15/09/09 11:11:06 INFO ql.Driver: OK
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;PERFLOG method=releaseLocks from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;/PERFLOG method=releaseLocks start=1441815066470 end=1441815066470 duration=0 from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;/PERFLOG method=Driver.run start=1441815066424 end=1441815066470 duration=46 from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO service.HiveServer: Running the query: CREATE EXTERNAL TABLE customSerdeTable (s1 string, s2 string, s3 string)
+    ROW FORMAT SERDE 'com.klarna.hiverunner.ToUpperCaseSerDe'
+        WITH SERDEPROPERTIES (
+            &quot;key&quot;=&quot;value&quot;,
+            &quot;KEY&quot;= &quot;VALUE&quot;
+        )
+        STORED AS TEXTFILE
+LOCATION '${hiveconf:hadoop.tmp.dir.uri}/customSerde'
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;PERFLOG method=Driver.run from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;PERFLOG method=TimeToSubmit from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO ql.Driver: Concurrency mode is disabled, not creating a lock manager
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;PERFLOG method=compile from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;PERFLOG method=parse from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO parse.ParseDriver: Parsing command: CREATE EXTERNAL TABLE customSerdeTable (s1 string, s2 string, s3 string)
+    ROW FORMAT SERDE 'com.klarna.hiverunner.ToUpperCaseSerDe'
+        WITH SERDEPROPERTIES (
+            &quot;key&quot;=&quot;value&quot;,
+            &quot;KEY&quot;= &quot;VALUE&quot;
+        )
+        STORED AS TEXTFILE
+LOCATION 'file:///var/folders/y7/4_pz5fzx54ngcmghz3v6t3m00000gn/T/junit787525099703078181/hadooptmp//customSerde'
+15/09/09 11:11:06 INFO parse.ParseDriver: Parse Completed
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;/PERFLOG method=parse start=1441815066471 end=1441815066471 duration=0 from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;PERFLOG method=semanticAnalyze from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO parse.SemanticAnalyzer: Starting Semantic Analysis
+15/09/09 11:11:06 INFO parse.SemanticAnalyzer: Creating table customSerdeTable position=22
+15/09/09 11:11:06 INFO metastore.HiveMetaStore: 0: get_database: default
+15/09/09 11:11:06 INFO HiveMetaStore.audit: ugi=hpatel	ip=unknown-ip-addr	cmd=get_database: default	
+15/09/09 11:11:06 INFO ql.Driver: Semantic Analysis Completed
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;/PERFLOG method=semanticAnalyze start=1441815066471 end=1441815066473 duration=2 from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO ql.Driver: Returning Hive schema: Schema(fieldSchemas:null, properties:null)
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;/PERFLOG method=compile start=1441815066470 end=1441815066473 duration=3 from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;PERFLOG method=Driver.execute from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO ql.Driver: Starting command: CREATE EXTERNAL TABLE customSerdeTable (s1 string, s2 string, s3 string)
+    ROW FORMAT SERDE 'com.klarna.hiverunner.ToUpperCaseSerDe'
+        WITH SERDEPROPERTIES (
+            &quot;key&quot;=&quot;value&quot;,
+            &quot;KEY&quot;= &quot;VALUE&quot;
+        )
+        STORED AS TEXTFILE
+LOCATION 'file:///var/folders/y7/4_pz5fzx54ngcmghz3v6t3m00000gn/T/junit787525099703078181/hadooptmp//customSerde'
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;/PERFLOG method=TimeToSubmit start=1441815066470 end=1441815066473 duration=3 from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;PERFLOG method=runTasks from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;PERFLOG method=task.DDL.Stage-0 from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 ERROR exec.DDLTask: org.apache.hadoop.hive.ql.metadata.HiveException: java.lang.NullPointerException
+	at org.apache.hadoop.hive.ql.metadata.Hive.createTable(Hive.java:643)
+	at org.apache.hadoop.hive.ql.exec.DDLTask.createTable(DDLTask.java:4242)
+	at org.apache.hadoop.hive.ql.exec.DDLTask.execute(DDLTask.java:285)
+	at org.apache.hadoop.hive.ql.exec.Task.executeTask(Task.java:153)
+	at org.apache.hadoop.hive.ql.exec.TaskRunner.runSequential(TaskRunner.java:85)
+	at org.apache.hadoop.hive.ql.Driver.launchTask(Driver.java:1554)
+	at org.apache.hadoop.hive.ql.Driver.execute(Driver.java:1321)
+	at org.apache.hadoop.hive.ql.Driver.runInternal(Driver.java:1139)
+	at org.apache.hadoop.hive.ql.Driver.run(Driver.java:962)
+	at org.apache.hadoop.hive.ql.Driver.run(Driver.java:952)
+	at org.apache.hadoop.hive.service.HiveServer$HiveServerHandler.execute(HiveServer.java:197)
+	at com.klarna.hiverunner.HiveServerContainer.executeScript(HiveServerContainer.java:104)
+	at com.klarna.hiverunner.builder.HiveShellBase.executeScriptsUnderTest(HiveShellBase.java:251)
+	at com.klarna.hiverunner.builder.HiveShellBase.start(HiveShellBase.java:102)
+	at com.klarna.hiverunner.SerdeTest.testWithCustomSerde(SerdeTest.java:58)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at com.klarna.hiverunner.StandaloneHiveRunner.evaluateStatement(StandaloneHiveRunner.java:100)
+	at com.klarna.hiverunner.StandaloneHiveRunner.access$000(StandaloneHiveRunner.java:53)
+	at com.klarna.hiverunner.StandaloneHiveRunner$1$1.evaluate(StandaloneHiveRunner.java:79)
+	at org.junit.rules.ExternalResource$1.evaluate(ExternalResource.java:48)
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecuter.runTestClass(JUnitTestClassExecuter.java:86)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecuter.execute(JUnitTestClassExecuter.java:49)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassProcessor.processTestClass(JUnitTestClassProcessor.java:64)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:50)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.messaging.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32)
+	at org.gradle.messaging.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93)
+	at com.sun.proxy.$Proxy2.processTestClass(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:106)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.messaging.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:360)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:54)
+	at org.gradle.internal.concurrent.StoppableExecutorImpl$1.run(StoppableExecutorImpl.java:40)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.NullPointerException
+	at com.klarna.hiverunner.ToUpperCaseSerDe.initialize(ToUpperCaseSerDe.java:41)
+	at org.apache.hadoop.hive.serde2.AbstractSerDe.initialize(AbstractSerDe.java:49)
+	at org.apache.hadoop.hive.serde2.SerDeUtils.initializeSerDe(SerDeUtils.java:517)
+	at org.apache.hadoop.hive.metastore.MetaStoreUtils.getDeserializer(MetaStoreUtils.java:345)
+	at org.apache.hadoop.hive.ql.metadata.Table.getDeserializerFromMetaStore(Table.java:292)
+	at org.apache.hadoop.hive.ql.metadata.Table.getDeserializer(Table.java:285)
+	at org.apache.hadoop.hive.ql.metadata.Table.getCols(Table.java:635)
+	at org.apache.hadoop.hive.ql.metadata.Hive.createTable(Hive.java:617)
+	... 62 more
+
+FAILED: Execution Error, return code 1 from org.apache.hadoop.hive.ql.exec.DDLTask. java.lang.NullPointerException
+15/09/09 11:11:06 ERROR ql.Driver: FAILED: Execution Error, return code 1 from org.apache.hadoop.hive.ql.exec.DDLTask. java.lang.NullPointerException
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;/PERFLOG method=Driver.execute start=1441815066473 end=1441815066475 duration=2 from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;PERFLOG method=releaseLocks from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;/PERFLOG method=releaseLocks start=1441815066476 end=1441815066476 duration=0 from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 ERROR hiverunner.StandaloneHiveRunner: Failed to executeScript 'CREATE EXTERNAL TABLE customSerdeTable (s1 string, s2 string, s3 string)
+    ROW FORMAT SERDE 'com.klarna.hiverunner.ToUpperCaseSerDe'
+        WITH SERDEPROPERTIES (
+            &quot;key&quot;=&quot;value&quot;,
+            &quot;KEY&quot;= &quot;VALUE&quot;
+        )
+        STORED AS TEXTFILE
+LOCATION '${hiveconf:hadoop.tmp.dir.uri}/customSerde';
+
+
+
+
+': Failed to executeQuery Hive query CREATE EXTERNAL TABLE customSerdeTable (s1 string, s2 string, s3 string)
+    ROW FORMAT SERDE 'com.klarna.hiverunner.ToUpperCaseSerDe'
+        WITH SERDEPROPERTIES (
+            &quot;key&quot;=&quot;value&quot;,
+            &quot;KEY&quot;= &quot;VALUE&quot;
+        )
+        STORED AS TEXTFILE
+LOCATION '${hiveconf:hadoop.tmp.dir.uri}/customSerde': Query returned non-zero code: 1, cause: FAILED: Execution Error, return code 1 from org.apache.hadoop.hive.ql.exec.DDLTask. java.lang.NullPointerException
+java.lang.IllegalStateException: Failed to executeScript 'CREATE EXTERNAL TABLE customSerdeTable (s1 string, s2 string, s3 string)
+    ROW FORMAT SERDE 'com.klarna.hiverunner.ToUpperCaseSerDe'
+        WITH SERDEPROPERTIES (
+            &quot;key&quot;=&quot;value&quot;,
+            &quot;KEY&quot;= &quot;VALUE&quot;
+        )
+        STORED AS TEXTFILE
+LOCATION '${hiveconf:hadoop.tmp.dir.uri}/customSerde';
+
+
+
+
+': Failed to executeQuery Hive query CREATE EXTERNAL TABLE customSerdeTable (s1 string, s2 string, s3 string)
+    ROW FORMAT SERDE 'com.klarna.hiverunner.ToUpperCaseSerDe'
+        WITH SERDEPROPERTIES (
+            &quot;key&quot;=&quot;value&quot;,
+            &quot;KEY&quot;= &quot;VALUE&quot;
+        )
+        STORED AS TEXTFILE
+LOCATION '${hiveconf:hadoop.tmp.dir.uri}/customSerde': Query returned non-zero code: 1, cause: FAILED: Execution Error, return code 1 from org.apache.hadoop.hive.ql.exec.DDLTask. java.lang.NullPointerException
+	at com.klarna.hiverunner.builder.HiveShellBase.executeScriptsUnderTest(HiveShellBase.java:253)
+	at com.klarna.hiverunner.builder.HiveShellBase.start(HiveShellBase.java:102)
+	at com.klarna.hiverunner.SerdeTest.testWithCustomSerde(SerdeTest.java:58)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at com.klarna.hiverunner.StandaloneHiveRunner.evaluateStatement(StandaloneHiveRunner.java:100)
+	at com.klarna.hiverunner.StandaloneHiveRunner.access$000(StandaloneHiveRunner.java:53)
+	at com.klarna.hiverunner.StandaloneHiveRunner$1$1.evaluate(StandaloneHiveRunner.java:79)
+	at org.junit.rules.ExternalResource$1.evaluate(ExternalResource.java:48)
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecuter.runTestClass(JUnitTestClassExecuter.java:86)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecuter.execute(JUnitTestClassExecuter.java:49)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassProcessor.processTestClass(JUnitTestClassProcessor.java:64)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:50)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.messaging.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32)
+	at org.gradle.messaging.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93)
+	at com.sun.proxy.$Proxy2.processTestClass(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:106)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.messaging.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:360)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:54)
+	at org.gradle.internal.concurrent.StoppableExecutorImpl$1.run(StoppableExecutorImpl.java:40)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.IllegalStateException: Failed to executeQuery Hive query CREATE EXTERNAL TABLE customSerdeTable (s1 string, s2 string, s3 string)
+    ROW FORMAT SERDE 'com.klarna.hiverunner.ToUpperCaseSerDe'
+        WITH SERDEPROPERTIES (
+            &quot;key&quot;=&quot;value&quot;,
+            &quot;KEY&quot;= &quot;VALUE&quot;
+        )
+        STORED AS TEXTFILE
+LOCATION '${hiveconf:hadoop.tmp.dir.uri}/customSerde': Query returned non-zero code: 1, cause: FAILED: Execution Error, return code 1 from org.apache.hadoop.hive.ql.exec.DDLTask. java.lang.NullPointerException
+	at com.klarna.hiverunner.HiveServerContainer.executeScript(HiveServerContainer.java:106)
+	at com.klarna.hiverunner.builder.HiveShellBase.executeScriptsUnderTest(HiveShellBase.java:251)
+	... 50 more
+Caused by: HiveServerException(message:Query returned non-zero code: 1, cause: FAILED: Execution Error, return code 1 from org.apache.hadoop.hive.ql.exec.DDLTask. java.lang.NullPointerException, errorCode:1, SQLState:08S01)
+	at org.apache.hadoop.hive.service.HiveServer$HiveServerHandler.execute(HiveServer.java:218)
+	at com.klarna.hiverunner.HiveServerContainer.executeScript(HiveServerContainer.java:104)
+	... 51 more
+15/09/09 11:11:06 INFO service.HiveServer: Running the query: USE default
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;PERFLOG method=Driver.run from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;PERFLOG method=TimeToSubmit from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO ql.Driver: Concurrency mode is disabled, not creating a lock manager
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;PERFLOG method=compile from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;PERFLOG method=parse from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO parse.ParseDriver: Parsing command: USE default
+15/09/09 11:11:06 INFO parse.ParseDriver: Parse Completed
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;/PERFLOG method=parse start=1441815066479 end=1441815066479 duration=0 from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;PERFLOG method=semanticAnalyze from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO ql.Driver: Semantic Analysis Completed
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;/PERFLOG method=semanticAnalyze start=1441815066479 end=1441815066480 duration=1 from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO ql.Driver: Returning Hive schema: Schema(fieldSchemas:null, properties:null)
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;/PERFLOG method=compile start=1441815066479 end=1441815066480 duration=1 from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;PERFLOG method=Driver.execute from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO ql.Driver: Starting command: USE default
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;/PERFLOG method=TimeToSubmit start=1441815066479 end=1441815066480 duration=1 from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;PERFLOG method=runTasks from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;PERFLOG method=task.DDL.Stage-0 from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO metastore.HiveMetaStore: 0: get_database: default
+15/09/09 11:11:06 INFO HiveMetaStore.audit: ugi=hpatel	ip=unknown-ip-addr	cmd=get_database: default	
+15/09/09 11:11:06 INFO metastore.HiveMetaStore: 0: get_database: default
+15/09/09 11:11:06 INFO HiveMetaStore.audit: ugi=hpatel	ip=unknown-ip-addr	cmd=get_database: default	
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;/PERFLOG method=runTasks start=1441815066480 end=1441815066485 duration=5 from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;/PERFLOG method=Driver.execute start=1441815066480 end=1441815066485 duration=5 from=org.apache.hadoop.hive.ql.Driver&gt;
+OK
+15/09/09 11:11:06 INFO ql.Driver: OK
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;PERFLOG method=releaseLocks from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;/PERFLOG method=releaseLocks start=1441815066485 end=1441815066485 duration=0 from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;/PERFLOG method=Driver.run start=1441815066479 end=1441815066485 duration=6 from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO metastore.HiveMetaStore: 0: Shutting down the object store...
+15/09/09 11:11:06 INFO HiveMetaStore.audit: ugi=hpatel	ip=unknown-ip-addr	cmd=Shutting down the object store...	
+15/09/09 11:11:06 INFO metastore.HiveMetaStore: 0: Metastore shutdown complete.
+15/09/09 11:11:06 INFO HiveMetaStore.audit: ugi=hpatel	ip=unknown-ip-addr	cmd=Metastore shutdown complete.	
+15/09/09 11:11:06 INFO hiverunner.HiveServerContainer: Tore down HiveServer instance
+15/09/09 11:11:06 INFO metastore.HiveMetaStore: 0: Opening raw store with implemenation class:org.apache.hadoop.hive.metastore.ObjectStore
+15/09/09 11:11:06 INFO metastore.ObjectStore: ObjectStore, initialize called
+15/09/09 11:11:06 INFO DataNucleus.Persistence: Property datanucleus.cache.level2 unknown - will be ignored
+15/09/09 11:11:06 INFO DataNucleus.Persistence: Property hive.metastore.integral.jdo.pushdown unknown - will be ignored
+15/09/09 11:11:06 INFO metastore.ObjectStore: Setting MetaStore object pin classes with hive.metastore.cache.pinobjtypes=&quot;Table,StorageDescriptor,SerDeInfo,Partition,Database,Type,FieldSchema,Order&quot;
+15/09/09 11:11:06 INFO metastore.MetaStoreDirectSql: MySQL check failed, assuming we are not on mysql: unknown token: 
+15/09/09 11:11:06 INFO DataNucleus.Datastore: The class &quot;org.apache.hadoop.hive.metastore.model.MFieldSchema&quot; is tagged as &quot;embedded-only&quot; so does not have its own datastore table.
+15/09/09 11:11:06 INFO DataNucleus.Datastore: The class &quot;org.apache.hadoop.hive.metastore.model.MOrder&quot; is tagged as &quot;embedded-only&quot; so does not have its own datastore table.
+15/09/09 11:11:06 INFO DataNucleus.Datastore: The class &quot;org.apache.hadoop.hive.metastore.model.MFieldSchema&quot; is tagged as &quot;embedded-only&quot; so does not have its own datastore table.
+15/09/09 11:11:06 INFO DataNucleus.Datastore: The class &quot;org.apache.hadoop.hive.metastore.model.MOrder&quot; is tagged as &quot;embedded-only&quot; so does not have its own datastore table.
+15/09/09 11:11:06 INFO metastore.ObjectStore: Initialized ObjectStore
+15/09/09 11:11:06 INFO metastore.HiveMetaStore: No user is added in admin role, since config is empty
+15/09/09 11:11:06 INFO metastore.HiveMetaStore: 0: Shutting down the object store...
+15/09/09 11:11:06 INFO HiveMetaStore.audit: ugi=hpatel	ip=unknown-ip-addr	cmd=Shutting down the object store...	
+15/09/09 11:11:06 INFO metastore.HiveMetaStore: 0: Metastore shutdown complete.
+15/09/09 11:11:06 INFO HiveMetaStore.audit: ugi=hpatel	ip=unknown-ip-addr	cmd=Metastore shutdown complete.	
+15/09/09 11:11:06 INFO metastore.HiveMetaStore: No user is added in admin role, since config is empty
+15/09/09 11:11:06 INFO session.SessionState: No Tez session required at this point. hive.execution.engine=mr.
+15/09/09 11:11:06 INFO service.HiveServer: Putting temp output to file /var/folders/y7/4_pz5fzx54ngcmghz3v6t3m00000gn/T/junit2527377464031928678/localscratchdir/ee37ff82-872d-46c9-999b-7159ba4feb3d594065252271460131.pipeout
+15/09/09 11:11:06 INFO service.HiveServer: Running the query: SHOW TABLES
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;PERFLOG method=Driver.run from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;PERFLOG method=TimeToSubmit from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO ql.Driver: Concurrency mode is disabled, not creating a lock manager
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;PERFLOG method=compile from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;PERFLOG method=parse from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO parse.ParseDriver: Parsing command: SHOW TABLES
+15/09/09 11:11:06 INFO parse.ParseDriver: Parse Completed
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;/PERFLOG method=parse start=1441815066736 end=1441815066736 duration=0 from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;PERFLOG method=semanticAnalyze from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO ql.Driver: Semantic Analysis Completed
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;/PERFLOG method=semanticAnalyze start=1441815066736 end=1441815066740 duration=4 from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO exec.ListSinkOperator: Initializing Self 176 OP
+15/09/09 11:11:06 INFO exec.ListSinkOperator: Operator 176 OP initialized
+15/09/09 11:11:06 INFO exec.ListSinkOperator: Initialization Done 176 OP
+15/09/09 11:11:06 INFO ql.Driver: Returning Hive schema: Schema(fieldSchemas:[FieldSchema(name:tab_name, type:string, comment:from deserializer)], properties:null)
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;/PERFLOG method=compile start=1441815066736 end=1441815066741 duration=5 from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;PERFLOG method=Driver.execute from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO ql.Driver: Starting command: SHOW TABLES
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;/PERFLOG method=TimeToSubmit start=1441815066736 end=1441815066741 duration=5 from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;PERFLOG method=runTasks from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;PERFLOG method=task.DDL.Stage-0 from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO metastore.HiveMetaStore: 0: get_database: default
+15/09/09 11:11:06 INFO HiveMetaStore.audit: ugi=hpatel	ip=unknown-ip-addr	cmd=get_database: default	
+15/09/09 11:11:06 INFO metastore.HiveMetaStore: 0: Opening raw store with implemenation class:org.apache.hadoop.hive.metastore.ObjectStore
+15/09/09 11:11:06 INFO metastore.ObjectStore: ObjectStore, initialize called
+15/09/09 11:11:06 INFO metastore.MetaStoreDirectSql: MySQL check failed, assuming we are not on mysql: unknown token: 
+15/09/09 11:11:06 INFO DataNucleus.Query: Reading in results for query &quot;org.datanucleus.store.rdbms.query.SQLQuery@0&quot; since the connection used is closing
+15/09/09 11:11:06 INFO metastore.ObjectStore: Initialized ObjectStore
+15/09/09 11:11:06 INFO metastore.HiveMetaStore: 0: get_tables: db=default pat=.*
+15/09/09 11:11:06 INFO HiveMetaStore.audit: ugi=hpatel	ip=unknown-ip-addr	cmd=get_tables: db=default pat=.*	
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;/PERFLOG method=runTasks start=1441815066741 end=1441815066749 duration=8 from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;/PERFLOG method=Driver.execute start=1441815066741 end=1441815066750 duration=9 from=org.apache.hadoop.hive.ql.Driver&gt;
+OK
+15/09/09 11:11:06 INFO ql.Driver: OK
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;PERFLOG method=releaseLocks from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;/PERFLOG method=releaseLocks start=1441815066750 end=1441815066750 duration=0 from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;/PERFLOG method=Driver.run start=1441815066736 end=1441815066750 duration=14 from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO builder.HiveShellTearable: Created hive resource /var/folders/y7/4_pz5fzx54ngcmghz3v6t3m00000gn/T/junit2527377464031928678/hadooptmp/customSerde/data.csv
+15/09/09 11:11:06 INFO builder.HiveShellTearable: Created hive resource /var/folders/y7/4_pz5fzx54ngcmghz3v6t3m00000gn/T/junit2527377464031928678/hadooptmp/serde/data.csv
+15/09/09 11:11:06 INFO service.HiveServer: Running the query: CREATE TABLE serde_test (
+  key STRING,
+  value STRING
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.contrib.serde2.RegexSerDe'
+WITH SERDEPROPERTIES  (
+&quot;input.regex&quot; = &quot;([0-9]*)#([A-Z]*).*&quot;
+)
+STORED AS TEXTFILE
+LOCATION '${hiveconf:hadoop.tmp.dir.uri}/serde'
+15/09/09 11:11:06 INFO exec.ListSinkOperator: 176 finished. closing... 
+15/09/09 11:11:06 INFO exec.ListSinkOperator: 176 Close done
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;PERFLOG method=Driver.run from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;PERFLOG method=TimeToSubmit from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO ql.Driver: Concurrency mode is disabled, not creating a lock manager
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;PERFLOG method=compile from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;PERFLOG method=parse from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO parse.ParseDriver: Parsing command: CREATE TABLE serde_test (
+  key STRING,
+  value STRING
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.contrib.serde2.RegexSerDe'
+WITH SERDEPROPERTIES  (
+&quot;input.regex&quot; = &quot;([0-9]*)#([A-Z]*).*&quot;
+)
+STORED AS TEXTFILE
+LOCATION 'file:///var/folders/y7/4_pz5fzx54ngcmghz3v6t3m00000gn/T/junit2527377464031928678/hadooptmp//serde'
+15/09/09 11:11:06 INFO parse.ParseDriver: Parse Completed
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;/PERFLOG method=parse start=1441815066752 end=1441815066752 duration=0 from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;PERFLOG method=semanticAnalyze from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO parse.SemanticAnalyzer: Starting Semantic Analysis
+15/09/09 11:11:06 INFO parse.SemanticAnalyzer: Creating table serde_test position=13
+15/09/09 11:11:06 INFO metastore.HiveMetaStore: 0: get_database: default
+15/09/09 11:11:06 INFO HiveMetaStore.audit: ugi=hpatel	ip=unknown-ip-addr	cmd=get_database: default	
+15/09/09 11:11:06 INFO ql.Driver: Semantic Analysis Completed
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;/PERFLOG method=semanticAnalyze start=1441815066752 end=1441815066754 duration=2 from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO ql.Driver: Returning Hive schema: Schema(fieldSchemas:null, properties:null)
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;/PERFLOG method=compile start=1441815066751 end=1441815066754 duration=3 from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;PERFLOG method=Driver.execute from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO ql.Driver: Starting command: CREATE TABLE serde_test (
+  key STRING,
+  value STRING
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.contrib.serde2.RegexSerDe'
+WITH SERDEPROPERTIES  (
+&quot;input.regex&quot; = &quot;([0-9]*)#([A-Z]*).*&quot;
+)
+STORED AS TEXTFILE
+LOCATION 'file:///var/folders/y7/4_pz5fzx54ngcmghz3v6t3m00000gn/T/junit2527377464031928678/hadooptmp//serde'
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;/PERFLOG method=TimeToSubmit start=1441815066751 end=1441815066754 duration=3 from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;PERFLOG method=runTasks from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;PERFLOG method=task.DDL.Stage-0 from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO metastore.HiveMetaStore: 0: create_table: Table(tableName:serde_test, dbName:default, owner:hpatel, createTime:1441815066, lastAccessTime:0, retention:0, sd:StorageDescriptor(cols:[FieldSchema(name:key, type:string, comment:null), FieldSchema(name:value, type:string, comment:null)], location:file:/var/folders/y7/4_pz5fzx54ngcmghz3v6t3m00000gn/T/junit2527377464031928678/hadooptmp/serde, inputFormat:org.apache.hadoop.mapred.TextInputFormat, outputFormat:org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat, compressed:false, numBuckets:-1, serdeInfo:SerDeInfo(name:null, serializationLib:org.apache.hadoop.hive.contrib.serde2.RegexSerDe, parameters:{serialization.format=1, input.regex=([0-9]*)#([A-Z]*).*}), bucketCols:[], sortCols:[], parameters:{}, skewedInfo:SkewedInfo(skewedColNames:[], skewedColValues:[], skewedColValueLocationMaps:{}), storedAsSubDirectories:false), partitionKeys:[], parameters:{}, viewOriginalText:null, viewExpandedText:null, tableType:MANAGED_TABLE)
+15/09/09 11:11:06 INFO HiveMetaStore.audit: ugi=hpatel	ip=unknown-ip-addr	cmd=create_table: Table(tableName:serde_test, dbName:default, owner:hpatel, createTime:1441815066, lastAccessTime:0, retention:0, sd:StorageDescriptor(cols:[FieldSchema(name:key, type:string, comment:null), FieldSchema(name:value, type:string, comment:null)], location:file:/var/folders/y7/4_pz5fzx54ngcmghz3v6t3m00000gn/T/junit2527377464031928678/hadooptmp/serde, inputFormat:org.apache.hadoop.mapred.TextInputFormat, outputFormat:org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat, compressed:false, numBuckets:-1, serdeInfo:SerDeInfo(name:null, serializationLib:org.apache.hadoop.hive.contrib.serde2.RegexSerDe, parameters:{serialization.format=1, input.regex=([0-9]*)#([A-Z]*).*}), bucketCols:[], sortCols:[], parameters:{}, skewedInfo:SkewedInfo(skewedColNames:[], skewedColValues:[], skewedColValueLocationMaps:{}), storedAsSubDirectories:false), partitionKeys:[], parameters:{}, viewOriginalText:null, viewExpandedText:null, tableType:MANAGED_TABLE)	
+15/09/09 11:11:06 WARN metastore.HiveMetaStore: Location: file:/var/folders/y7/4_pz5fzx54ngcmghz3v6t3m00000gn/T/junit2527377464031928678/hadooptmp/serde specified for non-external table:serde_test
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;/PERFLOG method=runTasks start=1441815066754 end=1441815066777 duration=23 from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;/PERFLOG method=Driver.execute start=1441815066754 end=1441815066777 duration=23 from=org.apache.hadoop.hive.ql.Driver&gt;
+OK
+15/09/09 11:11:06 INFO ql.Driver: OK
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;PERFLOG method=releaseLocks from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;/PERFLOG method=releaseLocks start=1441815066777 end=1441815066778 duration=1 from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;/PERFLOG method=Driver.run start=1441815066751 end=1441815066778 duration=27 from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO service.HiveServer: Running the query: CREATE EXTERNAL TABLE customSerdeTable (s1 string, s2 string, s3 string)
+    ROW FORMAT SERDE 'com.klarna.hiverunner.ToUpperCaseSerDe'
+        WITH SERDEPROPERTIES (
+            &quot;key&quot;=&quot;value&quot;,
+            &quot;KEY&quot;= &quot;VALUE&quot;
+        )
+        STORED AS TEXTFILE
+LOCATION '${hiveconf:hadoop.tmp.dir.uri}/customSerde'
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;PERFLOG method=Driver.run from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;PERFLOG method=TimeToSubmit from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO ql.Driver: Concurrency mode is disabled, not creating a lock manager
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;PERFLOG method=compile from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;PERFLOG method=parse from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO parse.ParseDriver: Parsing command: CREATE EXTERNAL TABLE customSerdeTable (s1 string, s2 string, s3 string)
+    ROW FORMAT SERDE 'com.klarna.hiverunner.ToUpperCaseSerDe'
+        WITH SERDEPROPERTIES (
+            &quot;key&quot;=&quot;value&quot;,
+            &quot;KEY&quot;= &quot;VALUE&quot;
+        )
+        STORED AS TEXTFILE
+LOCATION 'file:///var/folders/y7/4_pz5fzx54ngcmghz3v6t3m00000gn/T/junit2527377464031928678/hadooptmp//customSerde'
+15/09/09 11:11:06 INFO parse.ParseDriver: Parse Completed
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;/PERFLOG method=parse start=1441815066778 end=1441815066779 duration=1 from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;PERFLOG method=semanticAnalyze from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO parse.SemanticAnalyzer: Starting Semantic Analysis
+15/09/09 11:11:06 INFO parse.SemanticAnalyzer: Creating table customSerdeTable position=22
+15/09/09 11:11:06 INFO metastore.HiveMetaStore: 0: get_database: default
+15/09/09 11:11:06 INFO HiveMetaStore.audit: ugi=hpatel	ip=unknown-ip-addr	cmd=get_database: default	
+15/09/09 11:11:06 INFO ql.Driver: Semantic Analysis Completed
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;/PERFLOG method=semanticAnalyze start=1441815066779 end=1441815066781 duration=2 from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO ql.Driver: Returning Hive schema: Schema(fieldSchemas:null, properties:null)
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;/PERFLOG method=compile start=1441815066778 end=1441815066781 duration=3 from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;PERFLOG method=Driver.execute from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO ql.Driver: Starting command: CREATE EXTERNAL TABLE customSerdeTable (s1 string, s2 string, s3 string)
+    ROW FORMAT SERDE 'com.klarna.hiverunner.ToUpperCaseSerDe'
+        WITH SERDEPROPERTIES (
+            &quot;key&quot;=&quot;value&quot;,
+            &quot;KEY&quot;= &quot;VALUE&quot;
+        )
+        STORED AS TEXTFILE
+LOCATION 'file:///var/folders/y7/4_pz5fzx54ngcmghz3v6t3m00000gn/T/junit2527377464031928678/hadooptmp//customSerde'
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;/PERFLOG method=TimeToSubmit start=1441815066778 end=1441815066782 duration=4 from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;PERFLOG method=runTasks from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;PERFLOG method=task.DDL.Stage-0 from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 ERROR exec.DDLTask: org.apache.hadoop.hive.ql.metadata.HiveException: java.lang.NullPointerException
+	at org.apache.hadoop.hive.ql.metadata.Hive.createTable(Hive.java:643)
+	at org.apache.hadoop.hive.ql.exec.DDLTask.createTable(DDLTask.java:4242)
+	at org.apache.hadoop.hive.ql.exec.DDLTask.execute(DDLTask.java:285)
+	at org.apache.hadoop.hive.ql.exec.Task.executeTask(Task.java:153)
+	at org.apache.hadoop.hive.ql.exec.TaskRunner.runSequential(TaskRunner.java:85)
+	at org.apache.hadoop.hive.ql.Driver.launchTask(Driver.java:1554)
+	at org.apache.hadoop.hive.ql.Driver.execute(Driver.java:1321)
+	at org.apache.hadoop.hive.ql.Driver.runInternal(Driver.java:1139)
+	at org.apache.hadoop.hive.ql.Driver.run(Driver.java:962)
+	at org.apache.hadoop.hive.ql.Driver.run(Driver.java:952)
+	at org.apache.hadoop.hive.service.HiveServer$HiveServerHandler.execute(HiveServer.java:197)
+	at com.klarna.hiverunner.HiveServerContainer.executeScript(HiveServerContainer.java:104)
+	at com.klarna.hiverunner.builder.HiveShellBase.executeScriptsUnderTest(HiveShellBase.java:251)
+	at com.klarna.hiverunner.builder.HiveShellBase.start(HiveShellBase.java:102)
+	at com.klarna.hiverunner.SerdeTest.testWithProvidedRegexSerde(SerdeTest.java:52)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at com.klarna.hiverunner.StandaloneHiveRunner.evaluateStatement(StandaloneHiveRunner.java:100)
+	at com.klarna.hiverunner.StandaloneHiveRunner.access$000(StandaloneHiveRunner.java:53)
+	at com.klarna.hiverunner.StandaloneHiveRunner$1$1.evaluate(StandaloneHiveRunner.java:79)
+	at org.junit.rules.ExternalResource$1.evaluate(ExternalResource.java:48)
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecuter.runTestClass(JUnitTestClassExecuter.java:86)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecuter.execute(JUnitTestClassExecuter.java:49)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassProcessor.processTestClass(JUnitTestClassProcessor.java:64)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:50)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.messaging.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32)
+	at org.gradle.messaging.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93)
+	at com.sun.proxy.$Proxy2.processTestClass(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:106)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.messaging.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:360)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:54)
+	at org.gradle.internal.concurrent.StoppableExecutorImpl$1.run(StoppableExecutorImpl.java:40)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.NullPointerException
+	at com.klarna.hiverunner.ToUpperCaseSerDe.initialize(ToUpperCaseSerDe.java:41)
+	at org.apache.hadoop.hive.serde2.AbstractSerDe.initialize(AbstractSerDe.java:49)
+	at org.apache.hadoop.hive.serde2.SerDeUtils.initializeSerDe(SerDeUtils.java:517)
+	at org.apache.hadoop.hive.metastore.MetaStoreUtils.getDeserializer(MetaStoreUtils.java:345)
+	at org.apache.hadoop.hive.ql.metadata.Table.getDeserializerFromMetaStore(Table.java:292)
+	at org.apache.hadoop.hive.ql.metadata.Table.getDeserializer(Table.java:285)
+	at org.apache.hadoop.hive.ql.metadata.Table.getCols(Table.java:635)
+	at org.apache.hadoop.hive.ql.metadata.Hive.createTable(Hive.java:617)
+	... 62 more
+
+FAILED: Execution Error, return code 1 from org.apache.hadoop.hive.ql.exec.DDLTask. java.lang.NullPointerException
+15/09/09 11:11:06 ERROR ql.Driver: FAILED: Execution Error, return code 1 from org.apache.hadoop.hive.ql.exec.DDLTask. java.lang.NullPointerException
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;/PERFLOG method=Driver.execute start=1441815066781 end=1441815066783 duration=2 from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;PERFLOG method=releaseLocks from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;/PERFLOG method=releaseLocks start=1441815066783 end=1441815066783 duration=0 from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 ERROR hiverunner.StandaloneHiveRunner: Failed to executeScript 'CREATE EXTERNAL TABLE customSerdeTable (s1 string, s2 string, s3 string)
+    ROW FORMAT SERDE 'com.klarna.hiverunner.ToUpperCaseSerDe'
+        WITH SERDEPROPERTIES (
+            &quot;key&quot;=&quot;value&quot;,
+            &quot;KEY&quot;= &quot;VALUE&quot;
+        )
+        STORED AS TEXTFILE
+LOCATION '${hiveconf:hadoop.tmp.dir.uri}/customSerde';
+
+
+
+
+': Failed to executeQuery Hive query CREATE EXTERNAL TABLE customSerdeTable (s1 string, s2 string, s3 string)
+    ROW FORMAT SERDE 'com.klarna.hiverunner.ToUpperCaseSerDe'
+        WITH SERDEPROPERTIES (
+            &quot;key&quot;=&quot;value&quot;,
+            &quot;KEY&quot;= &quot;VALUE&quot;
+        )
+        STORED AS TEXTFILE
+LOCATION '${hiveconf:hadoop.tmp.dir.uri}/customSerde': Query returned non-zero code: 1, cause: FAILED: Execution Error, return code 1 from org.apache.hadoop.hive.ql.exec.DDLTask. java.lang.NullPointerException
+java.lang.IllegalStateException: Failed to executeScript 'CREATE EXTERNAL TABLE customSerdeTable (s1 string, s2 string, s3 string)
+    ROW FORMAT SERDE 'com.klarna.hiverunner.ToUpperCaseSerDe'
+        WITH SERDEPROPERTIES (
+            &quot;key&quot;=&quot;value&quot;,
+            &quot;KEY&quot;= &quot;VALUE&quot;
+        )
+        STORED AS TEXTFILE
+LOCATION '${hiveconf:hadoop.tmp.dir.uri}/customSerde';
+
+
+
+
+': Failed to executeQuery Hive query CREATE EXTERNAL TABLE customSerdeTable (s1 string, s2 string, s3 string)
+    ROW FORMAT SERDE 'com.klarna.hiverunner.ToUpperCaseSerDe'
+        WITH SERDEPROPERTIES (
+            &quot;key&quot;=&quot;value&quot;,
+            &quot;KEY&quot;= &quot;VALUE&quot;
+        )
+        STORED AS TEXTFILE
+LOCATION '${hiveconf:hadoop.tmp.dir.uri}/customSerde': Query returned non-zero code: 1, cause: FAILED: Execution Error, return code 1 from org.apache.hadoop.hive.ql.exec.DDLTask. java.lang.NullPointerException
+	at com.klarna.hiverunner.builder.HiveShellBase.executeScriptsUnderTest(HiveShellBase.java:253)
+	at com.klarna.hiverunner.builder.HiveShellBase.start(HiveShellBase.java:102)
+	at com.klarna.hiverunner.SerdeTest.testWithProvidedRegexSerde(SerdeTest.java:52)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at com.klarna.hiverunner.StandaloneHiveRunner.evaluateStatement(StandaloneHiveRunner.java:100)
+	at com.klarna.hiverunner.StandaloneHiveRunner.access$000(StandaloneHiveRunner.java:53)
+	at com.klarna.hiverunner.StandaloneHiveRunner$1$1.evaluate(StandaloneHiveRunner.java:79)
+	at org.junit.rules.ExternalResource$1.evaluate(ExternalResource.java:48)
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecuter.runTestClass(JUnitTestClassExecuter.java:86)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecuter.execute(JUnitTestClassExecuter.java:49)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassProcessor.processTestClass(JUnitTestClassProcessor.java:64)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:50)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.messaging.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32)
+	at org.gradle.messaging.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93)
+	at com.sun.proxy.$Proxy2.processTestClass(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:106)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.messaging.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:360)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:54)
+	at org.gradle.internal.concurrent.StoppableExecutorImpl$1.run(StoppableExecutorImpl.java:40)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.IllegalStateException: Failed to executeQuery Hive query CREATE EXTERNAL TABLE customSerdeTable (s1 string, s2 string, s3 string)
+    ROW FORMAT SERDE 'com.klarna.hiverunner.ToUpperCaseSerDe'
+        WITH SERDEPROPERTIES (
+            &quot;key&quot;=&quot;value&quot;,
+            &quot;KEY&quot;= &quot;VALUE&quot;
+        )
+        STORED AS TEXTFILE
+LOCATION '${hiveconf:hadoop.tmp.dir.uri}/customSerde': Query returned non-zero code: 1, cause: FAILED: Execution Error, return code 1 from org.apache.hadoop.hive.ql.exec.DDLTask. java.lang.NullPointerException
+	at com.klarna.hiverunner.HiveServerContainer.executeScript(HiveServerContainer.java:106)
+	at com.klarna.hiverunner.builder.HiveShellBase.executeScriptsUnderTest(HiveShellBase.java:251)
+	... 50 more
+Caused by: HiveServerException(message:Query returned non-zero code: 1, cause: FAILED: Execution Error, return code 1 from org.apache.hadoop.hive.ql.exec.DDLTask. java.lang.NullPointerException, errorCode:1, SQLState:08S01)
+	at org.apache.hadoop.hive.service.HiveServer$HiveServerHandler.execute(HiveServer.java:218)
+	at com.klarna.hiverunner.HiveServerContainer.executeScript(HiveServerContainer.java:104)
+	... 51 more
+15/09/09 11:11:06 INFO service.HiveServer: Running the query: USE default
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;PERFLOG method=Driver.run from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;PERFLOG method=TimeToSubmit from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO ql.Driver: Concurrency mode is disabled, not creating a lock manager
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;PERFLOG method=compile from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;PERFLOG method=parse from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO parse.ParseDriver: Parsing command: USE default
+15/09/09 11:11:06 INFO parse.ParseDriver: Parse Completed
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;/PERFLOG method=parse start=1441815066784 end=1441815066785 duration=1 from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;PERFLOG method=semanticAnalyze from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO ql.Driver: Semantic Analysis Completed
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;/PERFLOG method=semanticAnalyze start=1441815066785 end=1441815066785 duration=0 from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO ql.Driver: Returning Hive schema: Schema(fieldSchemas:null, properties:null)
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;/PERFLOG method=compile start=1441815066784 end=1441815066785 duration=1 from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;PERFLOG method=Driver.execute from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO ql.Driver: Starting command: USE default
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;/PERFLOG method=TimeToSubmit start=1441815066784 end=1441815066785 duration=1 from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;PERFLOG method=runTasks from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;PERFLOG method=task.DDL.Stage-0 from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO metastore.HiveMetaStore: 0: get_database: default
+15/09/09 11:11:06 INFO HiveMetaStore.audit: ugi=hpatel	ip=unknown-ip-addr	cmd=get_database: default	
+15/09/09 11:11:06 INFO metastore.HiveMetaStore: 0: get_database: default
+15/09/09 11:11:06 INFO HiveMetaStore.audit: ugi=hpatel	ip=unknown-ip-addr	cmd=get_database: default	
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;/PERFLOG method=runTasks start=1441815066785 end=1441815066787 duration=2 from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;/PERFLOG method=Driver.execute start=1441815066785 end=1441815066787 duration=2 from=org.apache.hadoop.hive.ql.Driver&gt;
+OK
+15/09/09 11:11:06 INFO ql.Driver: OK
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;PERFLOG method=releaseLocks from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;/PERFLOG method=releaseLocks start=1441815066787 end=1441815066787 duration=0 from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO log.PerfLogger: &lt;/PERFLOG method=Driver.run start=1441815066784 end=1441815066787 duration=3 from=org.apache.hadoop.hive.ql.Driver&gt;
+15/09/09 11:11:06 INFO metastore.HiveMetaStore: 0: Shutting down the object store...
+15/09/09 11:11:06 INFO HiveMetaStore.audit: ugi=hpatel	ip=unknown-ip-addr	cmd=Shutting down the object store...	
+15/09/09 11:11:06 INFO metastore.HiveMetaStore: 0: Metastore shutdown complete.
+15/09/09 11:11:06 INFO HiveMetaStore.audit: ugi=hpatel	ip=unknown-ip-addr	cmd=Metastore shutdown complete.	
+15/09/09 11:11:06 INFO hiverunner.HiveServerContainer: Tore down HiveServer instance
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 2.4</a> at Sep 9, 2015 11:11:10 AM</p>
+</div>
+</div>
+</body>
+</html>

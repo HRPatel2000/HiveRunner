@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.klarna.hiverunner.HiveServerContainerTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2015-09-09T16:11:00" hostname="Himanshu.local" time="0.001">
+  <properties/>
+  <testcase name="testSplitBasic" classname="com.klarna.hiverunner.HiveServerContainerTest" time="0.0"/>
+  <testcase name="testDontSplitBackslashSemicolon" classname="com.klarna.hiverunner.HiveServerContainerTest" time="0.0"/>
+  <testcase name="methodWrongfullySplitsOnQuotedDelimiter" classname="com.klarna.hiverunner.HiveServerContainerTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

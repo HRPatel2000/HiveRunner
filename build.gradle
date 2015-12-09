@@ -1,0 +1,131 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+
+apply from: "$rootDir/gradle/repositories.gradle"
+apply from: "$rootDir/gradle/dependencies.gradle"
+
+group = 'com.klarna'
+version = '1.0.0'
+
+description = """"""
+
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+
+
+
+allprojects {
+    apply plugin: 'idea'
+}
+
+idea {
+    module {
+        //excludeDirs += [file('tcserver'),  file('build_tmp')]
+    }
+    project {
+        jdkName = '1.8'
+        languageLevel = '1.7'
+
+        ipr {
+            withXml { xmlFile ->
+                // enable 'Annotation Processors'
+                xmlFile.asNode().component.find { it.@name == 'CompilerConfiguration' }['annotationProcessing'][0].replaceNode {
+                    annotationProcessing {
+                        profile(default: true, name: 'Default', useClasspath: 'true', enabled: true)
+                    }
+                }
+
+                // setup Git root
+                xmlFile.asNode().component.find { it.@name == 'VcsDirectoryMappings' }.replaceNode {
+                    component(name: 'VcsDirectoryMappings') {
+                        mapping(directory: "", vcs: "")
+                        mapping(directory: "\$PROJECT_DIR\$", vcs: 'Git')
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+subprojects {
+
+}
+
+subprojects.each { subproject -> evaluationDependsOn(subproject.path)}
+
+repositories {
+
+    maven { url repos.nexus }
+    maven { url repos.nexus_cloudera }
+    maven { url repos.nexus_thirdparty }
+
+    maven { url repos.nexus_conjars }
+    maven { url repos.nexus_central }
+
+    //If Nexus Goes Down, Uncomment these lines. Be sure to enable Proxy Settings as well. May create a switch for this.
+
+//    maven { url repos.cloudera }
+//    maven { url repos.conjars }
+//    maven { url repos.mvncentral }
+//    mavenCentral()
+}
+dependencies {
+    compile([
+            libs.hadoopCore,
+            libs.hadoopCommon,
+            libs.hadoopClient,
+
+            libs.hiveShims,
+            libs.hiveSerde,
+            libs.hiveContrib,
+
+            libs.datanucleusApiJDO,
+            libs.datanucleusCore,
+            libs.datanucleusRDBMS,
+
+            libs.hsqldb,
+            libs.reflections,
+            libs.pentaho
+//            libs.kryo
+
+    ])
+    //TODO Use dependency variables
+    compile(group: 'org.apache.hive', name: 'hive-service', version:"$hiveVersion") {
+        exclude(module: 'derby')
+        exclude(module: 'datanucleus-api-jdo')
+        exclude(module: 'datanucleus-core')
+        exclude(module: 'datanucleus-rdbms')
+        exclude(module: 'bonecp')
+    }
+    compile(group: 'junit', name: 'junit', version:'4.11') {
+        /* This dependency was originally in the Maven provided scope, but the project was not of type war.
+        This behavior is not yet supported by Gradle, so this dependency has been converted to a compile dependency.
+        Please review and delete this closure when resolved. */
+    }
+
+
+    testCompile([
+            libs.mockitoCore,
+            libs.hamcrestAll
+    ])
+}
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: "http://arlpscsp01.ecorp.cat.com:8081/nexus/content/repositories/thirdparty/") {
+                authentication(userName: "admin", password: "admin123")
+            }
+
+            addFilter('jar')
+                    {
+                        artifact, file -> artifact.ext == 'jar'
+                    }
+        }
+    }
+}
+
+wrapper {
+    gradleVersion = '2.4'
+}

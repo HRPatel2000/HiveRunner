@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.klarna.hiverunner.builder.HiveShellBaseTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2015-09-09T16:11:09" hostname="Himanshu.local" time="0.281">
+  <properties/>
+  <testcase name="variableSubstitutionShouldBlowUpIfShellIsNotStarted" classname="com.klarna.hiverunner.builder.HiveShellBaseTest" time="0.137"/>
+  <testcase name="invalidFilePathShouldThrowException" classname="com.klarna.hiverunner.builder.HiveShellBaseTest" time="0.016"/>
+  <testcase name="setupScriptsMayNotBeAddedAfterShellIsStarted" classname="com.klarna.hiverunner.builder.HiveShellBaseTest" time="0.021"/>
+  <testcase name="setupScriptMayBeAddedBeforeStart" classname="com.klarna.hiverunner.builder.HiveShellBaseTest" time="0.017"/>
+  <testcase name="setupScriptMayNotBeAddedAfterShellIsStarted" classname="com.klarna.hiverunner.builder.HiveShellBaseTest" time="0.016"/>
+  <testcase name="setupScriptsShouldBeExecutedAtStart" classname="com.klarna.hiverunner.builder.HiveShellBaseTest" time="0.017"/>
+  <testcase name="substitutedVariablesShouldBeExpanded" classname="com.klarna.hiverunner.builder.HiveShellBaseTest" time="0.018"/>
+  <testcase name="multipleSubstitutesShouldBeExpanded" classname="com.klarna.hiverunner.builder.HiveShellBaseTest" time="0.019"/>
+  <testcase name="nestedSubstitutesShouldBeExpanded" classname="com.klarna.hiverunner.builder.HiveShellBaseTest" time="0.019"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[15/09/09 11:11:09 INFO builder.HiveShellBase: Executing script: foo
+15/09/09 11:11:09 INFO builder.HiveShellBase: Executing script: 
+]]></system-err>
+</testsuite>

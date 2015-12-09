@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.klarna.hiverunner.UnresolvedResourcePathTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2015-09-09T16:11:07" hostname="Himanshu.local" time="0.576">
+  <properties/>
+  <testcase name="resourceFilePathShouldAlwaysBeInsideTempDir" classname="com.klarna.hiverunner.UnresolvedResourcePathTest" time="0.204"/>
+  <testcase name="resourceFileShouldNotBeCreatedIfReferencesAreUnresolved" classname="com.klarna.hiverunner.UnresolvedResourcePathTest" time="0.189"/>
+  <testcase name="resourceFileShouldBeCreatedInsideTempDir" classname="com.klarna.hiverunner.UnresolvedResourcePathTest" time="0.183"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[15/09/09 11:11:07 INFO metastore.HiveMetaStore: 0: Opening raw store with implemenation class:org.apache.hadoop.hive.metastore.ObjectStore
+15/09/09 11:11:07 INFO metastore.ObjectStore: ObjectStore, initialize called
+15/09/09 11:11:07 INFO DataNucleus.Persistence: Property datanucleus.cache.level2 unknown - will be ignored
+15/09/09 11:11:07 INFO DataNucleus.Persistence: Property hive.metastore.integral.jdo.pushdown unknown - will be ignored
+15/09/09 11:11:08 INFO metastore.ObjectStore: Setting MetaStore object pin classes with hive.metastore.cache.pinobjtypes="Table,StorageDescriptor,SerDeInfo,Partition,Database,Type,FieldSchema,Order"
+15/09/09 11:11:08 INFO metastore.MetaStoreDirectSql: MySQL check failed, assuming we are not on mysql: unknown token: 
+15/09/09 11:11:08 INFO DataNucleus.Datastore: The class "org.apache.hadoop.hive.metastore.model.MFieldSchema" is tagged as "embedded-only" so does not have its own datastore table.
+15/09/09 11:11:08 INFO DataNucleus.Datastore: The class "org.apache.hadoop.hive.metastore.model.MOrder" is tagged as "embedded-only" so does not have its own datastore table.
+15/09/09 11:11:08 INFO DataNucleus.Datastore: The class "org.apache.hadoop.hive.metastore.model.MFieldSchema" is tagged as "embedded-only" so does not have its own datastore table.
+15/09/09 11:11:08 INFO DataNucleus.Datastore: The class "org.apache.hadoop.hive.metastore.model.MOrder" is tagged as "embedded-only" so does not have its own datastore table.
+15/09/09 11:11:08 INFO metastore.ObjectStore: Initialized ObjectStore
+15/09/09 11:11:08 INFO metastore.HiveMetaStore: No user is added in admin role, since config is empty
+15/09/09 11:11:08 INFO metastore.HiveMetaStore: 0: Shutting down the object store...
+15/09/09 11:11:08 INFO HiveMetaStore.audit: ugi=hpatel	ip=unknown-ip-addr	cmd=Shutting down the object store...	
+15/09/09 11:11:08 INFO metastore.HiveMetaStore: 0: Metastore shutdown complete.
+15/09/09 11:11:08 INFO HiveMetaStore.audit: ugi=hpatel	ip=unknown-ip-addr	cmd=Metastore shutdown complete.	
+15/09/09 11:11:08 INFO metastore.HiveMetaStore: No user is added in admin role, since config is empty
+15/09/09 11:11:08 INFO session.SessionState: No Tez session required at this point. hive.execution.engine=mr.
+15/09/09 11:11:08 INFO service.HiveServer: Putting temp output to file /var/folders/y7/4_pz5fzx54ngcmghz3v6t3m00000gn/T/junit5900547396385169327/localscratchdir/bb569db0-fa82-44fe-8dda-0c0be88e63a22885190561676085551.pipeout
+15/09/09 11:11:08 INFO service.HiveServer: Running the query: SHOW TABLES
+15/09/09 11:11:08 INFO log.PerfLogger: <PERFLOG method=Driver.run from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO log.PerfLogger: <PERFLOG method=TimeToSubmit from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO ql.Driver: Concurrency mode is disabled, not creating a lock manager
+15/09/09 11:11:08 INFO log.PerfLogger: <PERFLOG method=compile from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO log.PerfLogger: <PERFLOG method=parse from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO parse.ParseDriver: Parsing command: SHOW TABLES
+15/09/09 11:11:08 INFO parse.ParseDriver: Parse Completed
+15/09/09 11:11:08 INFO log.PerfLogger: </PERFLOG method=parse start=1441815068031 end=1441815068031 duration=0 from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO log.PerfLogger: <PERFLOG method=semanticAnalyze from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO ql.Driver: Semantic Analysis Completed
+15/09/09 11:11:08 INFO log.PerfLogger: </PERFLOG method=semanticAnalyze start=1441815068031 end=1441815068035 duration=4 from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO exec.ListSinkOperator: Initializing Self 189 OP
+15/09/09 11:11:08 INFO exec.ListSinkOperator: Operator 189 OP initialized
+15/09/09 11:11:08 INFO exec.ListSinkOperator: Initialization Done 189 OP
+15/09/09 11:11:08 INFO ql.Driver: Returning Hive schema: Schema(fieldSchemas:[FieldSchema(name:tab_name, type:string, comment:from deserializer)], properties:null)
+15/09/09 11:11:08 INFO log.PerfLogger: </PERFLOG method=compile start=1441815068031 end=1441815068035 duration=4 from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO log.PerfLogger: <PERFLOG method=Driver.execute from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO ql.Driver: Starting command: SHOW TABLES
+15/09/09 11:11:08 INFO log.PerfLogger: </PERFLOG method=TimeToSubmit start=1441815068031 end=1441815068035 duration=4 from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO log.PerfLogger: <PERFLOG method=runTasks from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO log.PerfLogger: <PERFLOG method=task.DDL.Stage-0 from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO metastore.HiveMetaStore: 0: get_database: default
+15/09/09 11:11:08 INFO HiveMetaStore.audit: ugi=hpatel	ip=unknown-ip-addr	cmd=get_database: default	
+15/09/09 11:11:08 INFO metastore.HiveMetaStore: 0: Opening raw store with implemenation class:org.apache.hadoop.hive.metastore.ObjectStore
+15/09/09 11:11:08 INFO metastore.ObjectStore: ObjectStore, initialize called
+15/09/09 11:11:08 INFO metastore.MetaStoreDirectSql: MySQL check failed, assuming we are not on mysql: unknown token: 
+15/09/09 11:11:08 INFO DataNucleus.Query: Reading in results for query "org.datanucleus.store.rdbms.query.SQLQuery@0" since the connection used is closing
+15/09/09 11:11:08 INFO metastore.ObjectStore: Initialized ObjectStore
+15/09/09 11:11:08 INFO metastore.HiveMetaStore: 0: get_tables: db=default pat=.*
+15/09/09 11:11:08 INFO HiveMetaStore.audit: ugi=hpatel	ip=unknown-ip-addr	cmd=get_tables: db=default pat=.*	
+15/09/09 11:11:08 INFO log.PerfLogger: </PERFLOG method=runTasks start=1441815068035 end=1441815068044 duration=9 from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO log.PerfLogger: </PERFLOG method=Driver.execute start=1441815068035 end=1441815068044 duration=9 from=org.apache.hadoop.hive.ql.Driver>
+OK
+15/09/09 11:11:08 INFO ql.Driver: OK
+15/09/09 11:11:08 INFO log.PerfLogger: <PERFLOG method=releaseLocks from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO log.PerfLogger: </PERFLOG method=releaseLocks start=1441815068044 end=1441815068044 duration=0 from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO log.PerfLogger: </PERFLOG method=Driver.run start=1441815068031 end=1441815068044 duration=13 from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO service.HiveServer: Running the query: USE default
+15/09/09 11:11:08 INFO exec.ListSinkOperator: 189 finished. closing... 
+15/09/09 11:11:08 INFO exec.ListSinkOperator: 189 Close done
+15/09/09 11:11:08 INFO log.PerfLogger: <PERFLOG method=Driver.run from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO log.PerfLogger: <PERFLOG method=TimeToSubmit from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO ql.Driver: Concurrency mode is disabled, not creating a lock manager
+15/09/09 11:11:08 INFO log.PerfLogger: <PERFLOG method=compile from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO log.PerfLogger: <PERFLOG method=parse from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO parse.ParseDriver: Parsing command: USE default
+15/09/09 11:11:08 INFO parse.ParseDriver: Parse Completed
+15/09/09 11:11:08 INFO log.PerfLogger: </PERFLOG method=parse start=1441815068046 end=1441815068047 duration=1 from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO log.PerfLogger: <PERFLOG method=semanticAnalyze from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO ql.Driver: Semantic Analysis Completed
+15/09/09 11:11:08 INFO log.PerfLogger: </PERFLOG method=semanticAnalyze start=1441815068047 end=1441815068047 duration=0 from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO ql.Driver: Returning Hive schema: Schema(fieldSchemas:null, properties:null)
+15/09/09 11:11:08 INFO log.PerfLogger: </PERFLOG method=compile start=1441815068046 end=1441815068047 duration=1 from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO log.PerfLogger: <PERFLOG method=Driver.execute from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO ql.Driver: Starting command: USE default
+15/09/09 11:11:08 INFO log.PerfLogger: </PERFLOG method=TimeToSubmit start=1441815068046 end=1441815068047 duration=1 from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO log.PerfLogger: <PERFLOG method=runTasks from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO log.PerfLogger: <PERFLOG method=task.DDL.Stage-0 from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO metastore.HiveMetaStore: 0: get_database: default
+15/09/09 11:11:08 INFO HiveMetaStore.audit: ugi=hpatel	ip=unknown-ip-addr	cmd=get_database: default	
+15/09/09 11:11:08 INFO metastore.HiveMetaStore: 0: get_database: default
+15/09/09 11:11:08 INFO HiveMetaStore.audit: ugi=hpatel	ip=unknown-ip-addr	cmd=get_database: default	
+15/09/09 11:11:08 INFO log.PerfLogger: </PERFLOG method=runTasks start=1441815068047 end=1441815068049 duration=2 from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO log.PerfLogger: </PERFLOG method=Driver.execute start=1441815068047 end=1441815068049 duration=2 from=org.apache.hadoop.hive.ql.Driver>
+OK
+15/09/09 11:11:08 INFO ql.Driver: OK
+15/09/09 11:11:08 INFO log.PerfLogger: <PERFLOG method=releaseLocks from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO log.PerfLogger: </PERFLOG method=releaseLocks start=1441815068050 end=1441815068050 duration=0 from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO log.PerfLogger: </PERFLOG method=Driver.run start=1441815068046 end=1441815068050 duration=4 from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO metastore.HiveMetaStore: 0: Shutting down the object store...
+15/09/09 11:11:08 INFO HiveMetaStore.audit: ugi=hpatel	ip=unknown-ip-addr	cmd=Shutting down the object store...	
+15/09/09 11:11:08 INFO metastore.HiveMetaStore: 0: Metastore shutdown complete.
+15/09/09 11:11:08 INFO HiveMetaStore.audit: ugi=hpatel	ip=unknown-ip-addr	cmd=Metastore shutdown complete.	
+15/09/09 11:11:08 INFO hiverunner.HiveServerContainer: Tore down HiveServer instance
+15/09/09 11:11:08 INFO metastore.HiveMetaStore: 0: Opening raw store with implemenation class:org.apache.hadoop.hive.metastore.ObjectStore
+15/09/09 11:11:08 INFO metastore.ObjectStore: ObjectStore, initialize called
+15/09/09 11:11:08 INFO DataNucleus.Persistence: Property datanucleus.cache.level2 unknown - will be ignored
+15/09/09 11:11:08 INFO DataNucleus.Persistence: Property hive.metastore.integral.jdo.pushdown unknown - will be ignored
+15/09/09 11:11:08 INFO metastore.ObjectStore: Setting MetaStore object pin classes with hive.metastore.cache.pinobjtypes="Table,StorageDescriptor,SerDeInfo,Partition,Database,Type,FieldSchema,Order"
+15/09/09 11:11:08 INFO metastore.MetaStoreDirectSql: MySQL check failed, assuming we are not on mysql: unknown token: 
+15/09/09 11:11:08 INFO DataNucleus.Datastore: The class "org.apache.hadoop.hive.metastore.model.MFieldSchema" is tagged as "embedded-only" so does not have its own datastore table.
+15/09/09 11:11:08 INFO DataNucleus.Datastore: The class "org.apache.hadoop.hive.metastore.model.MOrder" is tagged as "embedded-only" so does not have its own datastore table.
+15/09/09 11:11:08 INFO DataNucleus.Datastore: The class "org.apache.hadoop.hive.metastore.model.MFieldSchema" is tagged as "embedded-only" so does not have its own datastore table.
+15/09/09 11:11:08 INFO DataNucleus.Datastore: The class "org.apache.hadoop.hive.metastore.model.MOrder" is tagged as "embedded-only" so does not have its own datastore table.
+15/09/09 11:11:08 INFO metastore.ObjectStore: Initialized ObjectStore
+15/09/09 11:11:08 INFO metastore.HiveMetaStore: No user is added in admin role, since config is empty
+15/09/09 11:11:08 INFO metastore.HiveMetaStore: 0: Shutting down the object store...
+15/09/09 11:11:08 INFO HiveMetaStore.audit: ugi=hpatel	ip=unknown-ip-addr	cmd=Shutting down the object store...	
+15/09/09 11:11:08 INFO metastore.HiveMetaStore: 0: Metastore shutdown complete.
+15/09/09 11:11:08 INFO HiveMetaStore.audit: ugi=hpatel	ip=unknown-ip-addr	cmd=Metastore shutdown complete.	
+15/09/09 11:11:08 INFO metastore.HiveMetaStore: No user is added in admin role, since config is empty
+15/09/09 11:11:08 INFO session.SessionState: No Tez session required at this point. hive.execution.engine=mr.
+15/09/09 11:11:08 INFO service.HiveServer: Putting temp output to file /var/folders/y7/4_pz5fzx54ngcmghz3v6t3m00000gn/T/junit4598947319042980748/localscratchdir/c910e4d8-46dd-4876-8c96-00809e928ce01739626832043185493.pipeout
+15/09/09 11:11:08 INFO service.HiveServer: Running the query: SHOW TABLES
+15/09/09 11:11:08 INFO log.PerfLogger: <PERFLOG method=Driver.run from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO log.PerfLogger: <PERFLOG method=TimeToSubmit from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO ql.Driver: Concurrency mode is disabled, not creating a lock manager
+15/09/09 11:11:08 INFO log.PerfLogger: <PERFLOG method=compile from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO log.PerfLogger: <PERFLOG method=parse from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO parse.ParseDriver: Parsing command: SHOW TABLES
+15/09/09 11:11:08 INFO parse.ParseDriver: Parse Completed
+15/09/09 11:11:08 INFO log.PerfLogger: </PERFLOG method=parse start=1441815068221 end=1441815068222 duration=1 from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO log.PerfLogger: <PERFLOG method=semanticAnalyze from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO ql.Driver: Semantic Analysis Completed
+15/09/09 11:11:08 INFO log.PerfLogger: </PERFLOG method=semanticAnalyze start=1441815068222 end=1441815068225 duration=3 from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO exec.ListSinkOperator: Initializing Self 190 OP
+15/09/09 11:11:08 INFO exec.ListSinkOperator: Operator 190 OP initialized
+15/09/09 11:11:08 INFO exec.ListSinkOperator: Initialization Done 190 OP
+15/09/09 11:11:08 INFO ql.Driver: Returning Hive schema: Schema(fieldSchemas:[FieldSchema(name:tab_name, type:string, comment:from deserializer)], properties:null)
+15/09/09 11:11:08 INFO log.PerfLogger: </PERFLOG method=compile start=1441815068221 end=1441815068226 duration=5 from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO log.PerfLogger: <PERFLOG method=Driver.execute from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO ql.Driver: Starting command: SHOW TABLES
+15/09/09 11:11:08 INFO log.PerfLogger: </PERFLOG method=TimeToSubmit start=1441815068221 end=1441815068226 duration=5 from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO log.PerfLogger: <PERFLOG method=runTasks from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO log.PerfLogger: <PERFLOG method=task.DDL.Stage-0 from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO metastore.HiveMetaStore: 0: get_database: default
+15/09/09 11:11:08 INFO HiveMetaStore.audit: ugi=hpatel	ip=unknown-ip-addr	cmd=get_database: default	
+15/09/09 11:11:08 INFO metastore.HiveMetaStore: 0: Opening raw store with implemenation class:org.apache.hadoop.hive.metastore.ObjectStore
+15/09/09 11:11:08 INFO metastore.ObjectStore: ObjectStore, initialize called
+15/09/09 11:11:08 INFO metastore.MetaStoreDirectSql: MySQL check failed, assuming we are not on mysql: unknown token: 
+15/09/09 11:11:08 INFO DataNucleus.Query: Reading in results for query "org.datanucleus.store.rdbms.query.SQLQuery@0" since the connection used is closing
+15/09/09 11:11:08 INFO metastore.ObjectStore: Initialized ObjectStore
+15/09/09 11:11:08 INFO metastore.HiveMetaStore: 0: get_tables: db=default pat=.*
+15/09/09 11:11:08 INFO HiveMetaStore.audit: ugi=hpatel	ip=unknown-ip-addr	cmd=get_tables: db=default pat=.*	
+15/09/09 11:11:08 INFO log.PerfLogger: </PERFLOG method=runTasks start=1441815068226 end=1441815068235 duration=9 from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO log.PerfLogger: </PERFLOG method=Driver.execute start=1441815068226 end=1441815068235 duration=9 from=org.apache.hadoop.hive.ql.Driver>
+OK
+15/09/09 11:11:08 INFO ql.Driver: OK
+15/09/09 11:11:08 INFO log.PerfLogger: <PERFLOG method=releaseLocks from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO log.PerfLogger: </PERFLOG method=releaseLocks start=1441815068235 end=1441815068235 duration=0 from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO log.PerfLogger: </PERFLOG method=Driver.run start=1441815068221 end=1441815068235 duration=14 from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO service.HiveServer: Running the query: USE default
+15/09/09 11:11:08 INFO exec.ListSinkOperator: 190 finished. closing... 
+15/09/09 11:11:08 INFO exec.ListSinkOperator: 190 Close done
+15/09/09 11:11:08 INFO log.PerfLogger: <PERFLOG method=Driver.run from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO log.PerfLogger: <PERFLOG method=TimeToSubmit from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO ql.Driver: Concurrency mode is disabled, not creating a lock manager
+15/09/09 11:11:08 INFO log.PerfLogger: <PERFLOG method=compile from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO log.PerfLogger: <PERFLOG method=parse from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO parse.ParseDriver: Parsing command: USE default
+15/09/09 11:11:08 INFO parse.ParseDriver: Parse Completed
+15/09/09 11:11:08 INFO log.PerfLogger: </PERFLOG method=parse start=1441815068236 end=1441815068236 duration=0 from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO log.PerfLogger: <PERFLOG method=semanticAnalyze from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO ql.Driver: Semantic Analysis Completed
+15/09/09 11:11:08 INFO log.PerfLogger: </PERFLOG method=semanticAnalyze start=1441815068236 end=1441815068236 duration=0 from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO ql.Driver: Returning Hive schema: Schema(fieldSchemas:null, properties:null)
+15/09/09 11:11:08 INFO log.PerfLogger: </PERFLOG method=compile start=1441815068235 end=1441815068236 duration=1 from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO log.PerfLogger: <PERFLOG method=Driver.execute from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO ql.Driver: Starting command: USE default
+15/09/09 11:11:08 INFO log.PerfLogger: </PERFLOG method=TimeToSubmit start=1441815068235 end=1441815068236 duration=1 from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO log.PerfLogger: <PERFLOG method=runTasks from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO log.PerfLogger: <PERFLOG method=task.DDL.Stage-0 from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO metastore.HiveMetaStore: 0: get_database: default
+15/09/09 11:11:08 INFO HiveMetaStore.audit: ugi=hpatel	ip=unknown-ip-addr	cmd=get_database: default	
+15/09/09 11:11:08 INFO metastore.HiveMetaStore: 0: get_database: default
+15/09/09 11:11:08 INFO HiveMetaStore.audit: ugi=hpatel	ip=unknown-ip-addr	cmd=get_database: default	
+15/09/09 11:11:08 INFO log.PerfLogger: </PERFLOG method=runTasks start=1441815068236 end=1441815068238 duration=2 from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO log.PerfLogger: </PERFLOG method=Driver.execute start=1441815068236 end=1441815068238 duration=2 from=org.apache.hadoop.hive.ql.Driver>
+OK
+15/09/09 11:11:08 INFO ql.Driver: OK
+15/09/09 11:11:08 INFO log.PerfLogger: <PERFLOG method=releaseLocks from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO log.PerfLogger: </PERFLOG method=releaseLocks start=1441815068238 end=1441815068238 duration=0 from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO log.PerfLogger: </PERFLOG method=Driver.run start=1441815068235 end=1441815068238 duration=3 from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO metastore.HiveMetaStore: 0: Shutting down the object store...
+15/09/09 11:11:08 INFO HiveMetaStore.audit: ugi=hpatel	ip=unknown-ip-addr	cmd=Shutting down the object store...	
+15/09/09 11:11:08 INFO metastore.HiveMetaStore: 0: Metastore shutdown complete.
+15/09/09 11:11:08 INFO HiveMetaStore.audit: ugi=hpatel	ip=unknown-ip-addr	cmd=Metastore shutdown complete.	
+15/09/09 11:11:08 INFO hiverunner.HiveServerContainer: Tore down HiveServer instance
+15/09/09 11:11:08 INFO metastore.HiveMetaStore: 0: Opening raw store with implemenation class:org.apache.hadoop.hive.metastore.ObjectStore
+15/09/09 11:11:08 INFO metastore.ObjectStore: ObjectStore, initialize called
+15/09/09 11:11:08 INFO DataNucleus.Persistence: Property datanucleus.cache.level2 unknown - will be ignored
+15/09/09 11:11:08 INFO DataNucleus.Persistence: Property hive.metastore.integral.jdo.pushdown unknown - will be ignored
+15/09/09 11:11:08 INFO metastore.ObjectStore: Setting MetaStore object pin classes with hive.metastore.cache.pinobjtypes="Table,StorageDescriptor,SerDeInfo,Partition,Database,Type,FieldSchema,Order"
+15/09/09 11:11:08 INFO metastore.MetaStoreDirectSql: MySQL check failed, assuming we are not on mysql: unknown token: 
+15/09/09 11:11:08 INFO DataNucleus.Datastore: The class "org.apache.hadoop.hive.metastore.model.MFieldSchema" is tagged as "embedded-only" so does not have its own datastore table.
+15/09/09 11:11:08 INFO DataNucleus.Datastore: The class "org.apache.hadoop.hive.metastore.model.MOrder" is tagged as "embedded-only" so does not have its own datastore table.
+15/09/09 11:11:08 INFO DataNucleus.Datastore: The class "org.apache.hadoop.hive.metastore.model.MFieldSchema" is tagged as "embedded-only" so does not have its own datastore table.
+15/09/09 11:11:08 INFO DataNucleus.Datastore: The class "org.apache.hadoop.hive.metastore.model.MOrder" is tagged as "embedded-only" so does not have its own datastore table.
+15/09/09 11:11:08 INFO metastore.ObjectStore: Initialized ObjectStore
+15/09/09 11:11:08 INFO metastore.HiveMetaStore: No user is added in admin role, since config is empty
+15/09/09 11:11:08 INFO metastore.HiveMetaStore: 0: Shutting down the object store...
+15/09/09 11:11:08 INFO HiveMetaStore.audit: ugi=hpatel	ip=unknown-ip-addr	cmd=Shutting down the object store...	
+15/09/09 11:11:08 INFO metastore.HiveMetaStore: 0: Metastore shutdown complete.
+15/09/09 11:11:08 INFO HiveMetaStore.audit: ugi=hpatel	ip=unknown-ip-addr	cmd=Metastore shutdown complete.	
+15/09/09 11:11:08 INFO metastore.HiveMetaStore: No user is added in admin role, since config is empty
+15/09/09 11:11:08 INFO session.SessionState: No Tez session required at this point. hive.execution.engine=mr.
+15/09/09 11:11:08 INFO service.HiveServer: Putting temp output to file /var/folders/y7/4_pz5fzx54ngcmghz3v6t3m00000gn/T/junit1610089236542826286/localscratchdir/30885395-8641-4cc1-af0d-c73ff9624f241815778846341553496.pipeout
+15/09/09 11:11:08 INFO service.HiveServer: Running the query: SHOW TABLES
+15/09/09 11:11:08 INFO log.PerfLogger: <PERFLOG method=Driver.run from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO log.PerfLogger: <PERFLOG method=TimeToSubmit from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO ql.Driver: Concurrency mode is disabled, not creating a lock manager
+15/09/09 11:11:08 INFO log.PerfLogger: <PERFLOG method=compile from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO log.PerfLogger: <PERFLOG method=parse from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO parse.ParseDriver: Parsing command: SHOW TABLES
+15/09/09 11:11:08 INFO parse.ParseDriver: Parse Completed
+15/09/09 11:11:08 INFO log.PerfLogger: </PERFLOG method=parse start=1441815068403 end=1441815068403 duration=0 from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO log.PerfLogger: <PERFLOG method=semanticAnalyze from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO ql.Driver: Semantic Analysis Completed
+15/09/09 11:11:08 INFO log.PerfLogger: </PERFLOG method=semanticAnalyze start=1441815068403 end=1441815068407 duration=4 from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO exec.ListSinkOperator: Initializing Self 191 OP
+15/09/09 11:11:08 INFO exec.ListSinkOperator: Operator 191 OP initialized
+15/09/09 11:11:08 INFO exec.ListSinkOperator: Initialization Done 191 OP
+15/09/09 11:11:08 INFO ql.Driver: Returning Hive schema: Schema(fieldSchemas:[FieldSchema(name:tab_name, type:string, comment:from deserializer)], properties:null)
+15/09/09 11:11:08 INFO log.PerfLogger: </PERFLOG method=compile start=1441815068402 end=1441815068407 duration=5 from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO log.PerfLogger: <PERFLOG method=Driver.execute from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO ql.Driver: Starting command: SHOW TABLES
+15/09/09 11:11:08 INFO log.PerfLogger: </PERFLOG method=TimeToSubmit start=1441815068402 end=1441815068407 duration=5 from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO log.PerfLogger: <PERFLOG method=runTasks from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO log.PerfLogger: <PERFLOG method=task.DDL.Stage-0 from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO metastore.HiveMetaStore: 0: get_database: default
+15/09/09 11:11:08 INFO HiveMetaStore.audit: ugi=hpatel	ip=unknown-ip-addr	cmd=get_database: default	
+15/09/09 11:11:08 INFO metastore.HiveMetaStore: 0: Opening raw store with implemenation class:org.apache.hadoop.hive.metastore.ObjectStore
+15/09/09 11:11:08 INFO metastore.ObjectStore: ObjectStore, initialize called
+15/09/09 11:11:08 INFO metastore.MetaStoreDirectSql: MySQL check failed, assuming we are not on mysql: unknown token: 
+15/09/09 11:11:08 INFO DataNucleus.Query: Reading in results for query "org.datanucleus.store.rdbms.query.SQLQuery@0" since the connection used is closing
+15/09/09 11:11:08 INFO metastore.ObjectStore: Initialized ObjectStore
+15/09/09 11:11:08 INFO metastore.HiveMetaStore: 0: get_tables: db=default pat=.*
+15/09/09 11:11:08 INFO HiveMetaStore.audit: ugi=hpatel	ip=unknown-ip-addr	cmd=get_tables: db=default pat=.*	
+15/09/09 11:11:08 INFO log.PerfLogger: </PERFLOG method=runTasks start=1441815068408 end=1441815068417 duration=9 from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO log.PerfLogger: </PERFLOG method=Driver.execute start=1441815068407 end=1441815068417 duration=10 from=org.apache.hadoop.hive.ql.Driver>
+OK
+15/09/09 11:11:08 INFO ql.Driver: OK
+15/09/09 11:11:08 INFO log.PerfLogger: <PERFLOG method=releaseLocks from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO log.PerfLogger: </PERFLOG method=releaseLocks start=1441815068417 end=1441815068417 duration=0 from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO log.PerfLogger: </PERFLOG method=Driver.run start=1441815068402 end=1441815068417 duration=15 from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO builder.HiveShellTearable: Created hive resource /var/folders/y7/4_pz5fzx54ngcmghz3v6t3m00000gn/T/junit1610089236542826286/hadooptmp/bar/baz.csv
+15/09/09 11:11:08 INFO service.HiveServer: Running the query: USE default
+15/09/09 11:11:08 INFO exec.ListSinkOperator: 191 finished. closing... 
+15/09/09 11:11:08 INFO exec.ListSinkOperator: 191 Close done
+15/09/09 11:11:08 INFO log.PerfLogger: <PERFLOG method=Driver.run from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO log.PerfLogger: <PERFLOG method=TimeToSubmit from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO ql.Driver: Concurrency mode is disabled, not creating a lock manager
+15/09/09 11:11:08 INFO log.PerfLogger: <PERFLOG method=compile from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO log.PerfLogger: <PERFLOG method=parse from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO parse.ParseDriver: Parsing command: USE default
+15/09/09 11:11:08 INFO parse.ParseDriver: Parse Completed
+15/09/09 11:11:08 INFO log.PerfLogger: </PERFLOG method=parse start=1441815068418 end=1441815068419 duration=1 from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO log.PerfLogger: <PERFLOG method=semanticAnalyze from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO ql.Driver: Semantic Analysis Completed
+15/09/09 11:11:08 INFO log.PerfLogger: </PERFLOG method=semanticAnalyze start=1441815068419 end=1441815068419 duration=0 from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO ql.Driver: Returning Hive schema: Schema(fieldSchemas:null, properties:null)
+15/09/09 11:11:08 INFO log.PerfLogger: </PERFLOG method=compile start=1441815068418 end=1441815068419 duration=1 from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO log.PerfLogger: <PERFLOG method=Driver.execute from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO ql.Driver: Starting command: USE default
+15/09/09 11:11:08 INFO log.PerfLogger: </PERFLOG method=TimeToSubmit start=1441815068418 end=1441815068419 duration=1 from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO log.PerfLogger: <PERFLOG method=runTasks from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO log.PerfLogger: <PERFLOG method=task.DDL.Stage-0 from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO metastore.HiveMetaStore: 0: get_database: default
+15/09/09 11:11:08 INFO HiveMetaStore.audit: ugi=hpatel	ip=unknown-ip-addr	cmd=get_database: default	
+15/09/09 11:11:08 INFO metastore.HiveMetaStore: 0: get_database: default
+15/09/09 11:11:08 INFO HiveMetaStore.audit: ugi=hpatel	ip=unknown-ip-addr	cmd=get_database: default	
+15/09/09 11:11:08 INFO log.PerfLogger: </PERFLOG method=runTasks start=1441815068419 end=1441815068421 duration=2 from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO log.PerfLogger: </PERFLOG method=Driver.execute start=1441815068419 end=1441815068421 duration=2 from=org.apache.hadoop.hive.ql.Driver>
+OK
+15/09/09 11:11:08 INFO ql.Driver: OK
+15/09/09 11:11:08 INFO log.PerfLogger: <PERFLOG method=releaseLocks from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO log.PerfLogger: </PERFLOG method=releaseLocks start=1441815068421 end=1441815068421 duration=0 from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO log.PerfLogger: </PERFLOG method=Driver.run start=1441815068418 end=1441815068421 duration=3 from=org.apache.hadoop.hive.ql.Driver>
+15/09/09 11:11:08 INFO metastore.HiveMetaStore: 0: Shutting down the object store...
+15/09/09 11:11:08 INFO HiveMetaStore.audit: ugi=hpatel	ip=unknown-ip-addr	cmd=Shutting down the object store...	
+15/09/09 11:11:08 INFO metastore.HiveMetaStore: 0: Metastore shutdown complete.
+15/09/09 11:11:08 INFO HiveMetaStore.audit: ugi=hpatel	ip=unknown-ip-addr	cmd=Metastore shutdown complete.	
+15/09/09 11:11:08 INFO hiverunner.HiveServerContainer: Tore down HiveServer instance
+]]></system-err>
+</testsuite>
